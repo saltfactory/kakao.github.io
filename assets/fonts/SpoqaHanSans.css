@@ -1,0 +1,39 @@
+/*
+ * Spoqa Han Sans
+ * http://www.spoqa-han-sans.com
+ * https://github.com/spoqa/spoqa-han-sans
+ */
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('SpoqaHanSans Regular'),
+    url(SpoqaHanSans-Regular.eot) format('eot'),
+    url(SpoqaHanSans-Regular.woff) format('woff'),
+    url(SpoqaHanSans-Regular.ttf) format('truetype'),
+    url(SpoqaHanSans-Regular.svg) format('svg');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-style: normal;
+    font-weight: 200;
+    src: local('SpoqaHanSans Thin'),
+    url(SpoqaHanSans-Thin.eot) format('eot'),
+    url(SpoqaHanSans-Thin.woff) format('woff'),
+    url(SpoqaHanSans-Thin.ttf) format('truetype'),
+    url(SpoqaHanSans-Thin.svg) format('svg');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('SpoqaHanSans Bold'),
+    url(SpoqaHanSans-Bold.eot) format('eot'),
+    url(SpoqaHanSans-Bold.woff) format('woff'),
+    url(SpoqaHanSans-Bold.ttf) format('truetype'),
+    url(SpoqaHanSans-Bold.svg) format('svg');
+}
+
+

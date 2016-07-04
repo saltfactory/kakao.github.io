@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+</head>
+<body class="{{ page.body_class }} {{ page.layout | append: '-template' }}">
+
+{% include header.html %}
+
+<div id="wrapper">
+    {{ content }}
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+{% include footer.html %}
+
+</body>
+</html>

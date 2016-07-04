@@ -1,0 +1,96 @@
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        {% if site.github %}
+        <li>
+            <a id="link-github" href="http://github.com/{{ site.github.username }}" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        {% endif %}
+        {% if site.facebook %}
+        <li>
+            <a id="link-facebook" href="http://facebook.com/{{ site.facebook.username }}" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        {% endif %}
+        {% if site.twitter %}
+        <li>
+            <a id="link-twitter" href="http://twitter.com/{{ site.twitter.username }}" target="_blank">
+                <span class="sr-only">twitter</span>
+            </a>
+        </li>
+        {% endif %}
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <ul id="footer-menu">
+        <li><a href="//www.kakaocorp.com">Kakao</a></li>
+        <li><a href="//www.kakaocorp.com/recruit/currentOpportunities">Jobs</a></li>
+        <li><a href="//privacy.kakaocorp.com">Privacy</a></li>
+    </ul>
+    <p id="copyright">
+        <a href="//www.kakaocorp.com">Copyright &copy; Kakao Corp.</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+<!--<script src="//meta-kage.kakaocdn.net/dn/osa/blog/assets/js/jquery-1.12.0.min.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<!--<script src="/assets/lib/prism.min.js"></script>-->
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+{% if site.google_analytics %}
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '{{ site.google_analytics.ua }}', 'auto');
+    ga('send', 'pageview');
+</script>
+{% endif %}
+
+{% if site.facebook %}
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.5&appId={{ site.facebook.app_id }}";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% endif %}
+
+{% if site.twitter %}
+<script>!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');</script>
+{% endif %}
+
+{% if site.googleplus %}
+<script src="https://apis.google.com/js/platform.js" async defer>
+    {
+        lang: 'ko'
+    }
+</script>
+{% endif %}

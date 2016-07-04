@@ -1,0 +1,144 @@
+/*-------------------------------------------------------*/
+/*
+ * Kakao
+ */
+@font-face {
+    font-family: 'Kakao';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Kakao Regular'), local('KakaoOTF Regular'),
+    url(KakaoOTF-bRg.eot) format('eot'),
+    url(KakaoOTF-bRg.woff2) format('woff2'),
+    url(KakaoOTF-bRg.woff) format('woff'),
+    url(KakaoOTF-bRg.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Kakao';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Kakao Light'), local('KakaoOTF Light'),
+    url(KakaoOTF-aLt.eot) format('eot'),
+    url(KakaoOTF-aLt.woff2) format('woff2'),
+    url(KakaoOTF-aLt.woff) format('woff'),
+    url(KakaoOTF-aLt.otf) format('opentype');
+}
+
+/*
+@font-face {
+    font-family: 'Kakao';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Kakao Bold'), local('KakaoOTF Bold'),
+    url(KakaoOTF-cBd.eot) format('eot'),
+    url(KakaoOTF-cBd.woff2) format('woff2'),
+    url(KakaoOTF-cBd.woff) format('woff'),
+    url(KakaoOTF-cBd.otf) format('opentype');
+}
+*/
+
+/*-------------------------------------------------------*/
+/*
+ * Noto Sans KR
+ * http://www.google.com/get/noto/
+ * http://www.google.com/fonts/earlyaccess#Noto+Sans+KR
+ * https://github.com/googlei18n/noto-cjk
+ */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Noto Sans KR Thin'), local('Noto Sans CJK KR Thin'),
+    url(NotoSansKR-Thin.woff2) format('woff2'),
+    url(NotoSansKR-Thin.woff) format('woff'),
+    url(NotoSansKR-Thin.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans KR Light'), local('Noto Sans CJK KR Light'),
+    url(NotoSansKR-Light.woff2) format('woff2'),
+    url(NotoSansKR-Light.woff) format('woff'),
+    url(NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans KR Regular'), local('Noto Sans CJK KR Regular'),
+    url(NotoSansKR-Regular.woff2) format('woff2'),
+    url(NotoSansKR-Regular.woff) format('woff'),
+    url(NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans KR Medium'), local('Noto Sans CJK KR Medium'),
+    url(NotoSansKR-Medium.woff2) format('woff2'),
+    url(NotoSansKR-Medium.woff) format('woff'),
+    url(NotoSansKR-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans KR Bold'), local('Noto Sans CJK KR Bold'),
+    url(NotoSansKR-Bold.woff2) format('woff2'),
+    url(NotoSansKR-Bold.woff) format('woff'),
+    url(NotoSansKR-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Noto Sans KR Black'), local('Noto Sans CJK KR Black'),
+    url(NotoSansKR-Black.woff) format('woff'),
+    url(NotoSansKR-Black.otf) format('opentype');
+}
+
+/*-------------------------------------------------------*/
+/*
+ * Spoqa Han Sans
+ * http://www.spoqa-han-sans.com
+ * https://github.com/spoqa/spoqa-han-sans
+ */
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('SpoqaHanSans Regular'),
+    url(SpoqaHanSans-Regular.eot) format('eot'),
+    url(SpoqaHanSans-Regular.woff) format('woff'),
+    url(SpoqaHanSans-Regular.ttf) format('truetype'),
+    url(SpoqaHanSans-Regular.svg) format('svg');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-style: normal;
+    font-weight: 200;
+    src: local('SpoqaHanSans Thin'),
+    url(SpoqaHanSans-Thin.eot) format('eot'),
+    url(SpoqaHanSans-Thin.woff) format('woff'),
+    url(SpoqaHanSans-Thin.ttf) format('truetype'),
+    url(SpoqaHanSans-Thin.svg) format('svg');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('SpoqaHanSans Bold'),
+    url(SpoqaHanSans-Bold.eot) format('eot'),
+    url(SpoqaHanSans-Bold.woff) format('woff'),
+    url(SpoqaHanSans-Bold.ttf) format('truetype'),
+    url(SpoqaHanSans-Bold.svg) format('svg');
+}
+

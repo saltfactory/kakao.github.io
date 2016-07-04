@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Main</a></h5>
+    {% include share.html %}
+</div>
+
+<div id="cover" class="container"
+     style="background-image: url({{ page.image | default: '/assets/images/default_tag_cover.jpg' }})">
+    <div>
+        <h1>{{ page.title }}</h1>
+        <p>Posts in <strong>{{ page.name }}</strong></p>
+    </div>
+</div>
+
+<div id="content" class="container">
+    <div id="tag-content" role="main">
+        <ul id="post-list">
+            {% for post in site.posts %}
+                {% if post.tags contains page.name %}
+                    {% include item.html %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

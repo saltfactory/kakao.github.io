@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div id="cover" class="container-fluid"
+     style="background-image: url({{ page.image | default: '/assets/images/default_post_cover.jpg' }})">
+    <div>
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.description }}</p>
+    </div>
+</div>
+
+<div id="content" class="container">
+    <div id="post-content" class="post page" role="main">
+        {{ content }}
+    </div>
+</div>

@@ -1,0 +1,64 @@
+/*
+ * Noto Sans KR
+ * http://www.google.com/get/noto/
+ * http://www.google.com/fonts/earlyaccess#Noto+Sans+KR
+ * https://github.com/googlei18n/noto-cjk
+ */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Noto Sans KR Thin'), local('Noto Sans CJK KR Thin'),
+    url(NotoSansKR-Thin.woff2) format('woff2'),
+    url(NotoSansKR-Thin.woff) format('woff'),
+    url(NotoSansKR-Thin.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans KR Light'), local('Noto Sans CJK KR Light'),
+    url(NotoSansKR-Light.woff2) format('woff2'),
+    url(NotoSansKR-Light.woff) format('woff'),
+    url(NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans KR Regular'), local('Noto Sans CJK KR Regular'),
+    url(NotoSansKR-Regular.woff2) format('woff2'),
+    url(NotoSansKR-Regular.woff) format('woff'),
+    url(NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans KR Medium'), local('Noto Sans CJK KR Medium'),
+    url(NotoSansKR-Medium.woff2) format('woff2'),
+    url(NotoSansKR-Medium.woff) format('woff'),
+    url(NotoSansKR-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans KR Bold'), local('Noto Sans CJK KR Bold'),
+    url(NotoSansKR-Bold.woff2) format('woff2'),
+    url(NotoSansKR-Bold.woff) format('woff'),
+    url(NotoSansKR-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Noto Sans KR Black'), local('Noto Sans CJK KR Black'),
+    url(NotoSansKR-Black.woff) format('woff'),
+    url(NotoSansKR-Black.otf) format('opentype');
+}

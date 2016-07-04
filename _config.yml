@@ -1,0 +1,60 @@
+title: kakao 기술 블로그
+email: oss@kakaocorp.com
+description: >
+  Connect Everything 새로운 연결, 새로운 세상.
+  연결의 혁신으로 세상은 더욱 가깝고 새로워진다고 카카오는 믿습니다.
+baseurl: ''
+url: 'http://kakao.github.io'
+
+markdown: kramdown
+
+repository: kakao/kakao.github.io
+
+krandown:
+  input: GFM
+  highlighter: rouge
+
+excerpt_separator: <!--more-->
+
+gems:
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: '/page/:num/'
+
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: _authors
+    values:
+      layout: author
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+
+exclude: [README.md, Gemfile, Gemfile.lock]
+
+keep_files: [assets]
+
+# iolo's custom
+google_analytics:
+  ua: 'UA-72007721-1'
+facebook:
+  app_id: '1030557850293450'
+  username: daumkakaoglobal
+twitter:
+  username: kakaodev
+googleplus:
+  username: kakaodev
+github:
+  username: kakao

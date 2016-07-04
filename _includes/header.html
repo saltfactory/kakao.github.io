@@ -1,0 +1,19 @@
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a id="logo" href="/">
+        <span class="sr-only">KakaoTech</span>
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+    <ul id="menu" class="nav">
+        <li class="{% if page.url != '/opensource/' and page.url != '/openapi/' %} active {% endif %}"><a href="{{ base_path }}/">블로그</a></li>
+        <li class="{% if page.url == '/opensource/' %} active {% endif %}"><a href="{{ base_path }}/opensource/">오픈소스</a></li>
+        <li class="{% if page.url == '/openapi/' %} active {% endif %}"><a href="{{ base_path }}/openapi/">오픈API</a></li>
+    </ul>
+</div><!-- #header -->
