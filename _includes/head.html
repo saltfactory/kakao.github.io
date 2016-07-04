@@ -1,7 +1,7 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-{% if page.title and page.url and page.excerpt %}
+{% if page.layout == 'post' or page.layout == 'page' %}
 {% assign meta_title = page.title %}
 {% assign meta_author = page.author | default: site.author %}
 {% assign meta_description = page.excerpt | strip_html | truncatewords: 75 %}
