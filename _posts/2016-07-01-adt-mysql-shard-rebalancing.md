@@ -408,5 +408,4 @@ source DB 데이터가 끊임없이 바뀌는 중에 검증할 수 있는 방법
 * 서버 아이콘 출처: https://icons8.com/web-app/1339/server
 * 데이터베이스 아이콘 출처: http://www.seaicons.com/database-icon/
 
-
-감수: [성동찬](http://gywn.net) (한국카카오 카카오뱅크)
+> special thanks to [성동찬](http://gywn.net) (한국카카오 카카오뱅크)

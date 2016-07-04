@@ -73,5 +73,7 @@ ADT를 만들게 된 이유이자 핵심 목표인 **샤드 재분배용 커스�
 
 [kakao 기술 블로그](http://tech.kakao.com)와 [위키](https://github.com/kakao/adt/wiki)을 통해서 ADT의 활용 사례를 소개할 예정입니다. ADT가 이름처럼 전지전능한 도구가 될 수 있도록 여러분들의 많은 관심과 참여를 기대합니다.
 
+> special thanks to [성동찬](http://gywn.net) (한국카카오 카카오뱅크)
+
 * 커버 이미지 출처: [Swiss Army Knife on black](https://flic.kr/p/9mLNPi) &copy; [Edgar Pierce](https://www.flickr.com/photos/edgarpierce/)
 * 데이터베이스 아이콘 출처: http://www.seaicons.com/database-icon/
