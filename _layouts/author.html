@@ -7,13 +7,14 @@ layout: default
 </div>
 
 <div id="cover" class="container"
-     style="background-image: url({{ page.cover | default: '/assets/images/default_author_cover.jpg' }})">
+     {% if page.cover %}style="background-image: url({{ page.cover }});"{% endif %}>
     <div>
-        <div id="cover-author-image"{% if page.image %} style="background-image:url({{ page.image }});"{% endif %}>
+        <div id="cover-author-image"
+             {% if page.image %}style="background-image:url({{ page.image }});"{% endif %}>
             <span class="sr-only">{{ page.name }}'s profile image</span>
         </div>
         <h1>{{ page.title }}</h1>
-        <p>Posts by <em>{{ page.name }}</em></p>
+        <p>All Posts by <em>{{ page.name }}</em></p>
     </div>
 </div>
 
@@ -26,5 +27,6 @@ layout: default
                 {% endif %}
             {% endfor %}
         </ul>
+        {% include pagination.html %}
     </div>
 </div>

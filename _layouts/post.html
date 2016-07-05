@@ -7,7 +7,7 @@ layout: default
 </div>
 
 <div id="cover" class="container"
-     style="background-image: url({{ page.image | default: '/assets/images/default_post_cover.jpg' }})">
+     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
     <div>
         <h1>{{ page.title }}</h1>
         <p>
@@ -24,7 +24,7 @@ layout: default
     <div id="post-footer">
         {% assign author = site.authors | where: 'name', page.author | first %}
         <a id="post-author" href="{{ author.url }}">
-            <div id="author-image" style="background-image:url({{ author.image | default: ''}});">
+            <div id="author-image" style="background-image:url({{ author.image | default: '' }});">
                 <span class="sr-only">{{ author.name }}'s profile image</span>
             </div>
             <p id="author-name">{{ author.name }}</p>
@@ -39,23 +39,23 @@ layout: default
 <div id="post-links" class="container">
     {% assign prev = page.previous %}
     {% if prev %}
-    <div id="post-prev"
-         style="background-image:url({{ prev.image | default: '/assets/images/default_post_cover.jpg' }})">
-        <div>
-            <h3><a href="{{ prev.url }}">{{ prev.title }}</a></h3>
-            <p>YOU MIGHT ENJOY</p>
+        <div id="post-prev"
+             {% if prev.image %}style="background-image: url({{ prev.image }});"{% endif %}>
+            <div>
+                <h3><a href="{{ prev.url }}">{{ prev.title }}</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
         </div>
-    </div>
     {% endif %}
     {% assign next = page.next %}
     {% if next %}
-    <div id="post-next"
-         style="background-image:url({{ next.image | default: '/assets/images/default_post_cover.jpg' }})">
-        <div>
-            <h3><a href="{{ next.url }}">{{ next.title }}</a></h3>
-            <p>NEXT POST</p>
+        <div id="post-next"
+             {% if next.image %}style="background-image: url({{ next.image }});"{% endif %}>
+            <div>
+                <h3><a href="{{ next.url }}">{{ next.title }}</a></h3>
+                <p>NEXT POST</p>
+            </div>
         </div>
-    </div>
     {% endif %}
 </div>
 

@@ -7,10 +7,10 @@ layout: default
 </div>
 
 <div id="cover" class="container"
-     style="background-image: url({{ page.image | default: '/assets/images/default_tag_cover.jpg' }})">
+     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
     <div>
         <h1>{{ page.title }}</h1>
-        <p>Posts in <strong>{{ page.name }}</strong></p>
+        <p>All Posts in <strong>{{ page.name }}</strong></p>
     </div>
 </div>
 
@@ -23,5 +23,6 @@ layout: default
                 {% endif %}
             {% endfor %}
         </ul>
+        {% include pagination.html %}
     </div>
 </div>

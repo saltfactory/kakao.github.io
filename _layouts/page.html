@@ -2,10 +2,10 @@
 layout: default
 ---
 <div id="cover" class="container-fluid"
-     style="background-image: url({{ page.image | default: '/assets/images/default_post_cover.jpg' }})">
+     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
     <div>
         <h1>{{ page.title }}</h1>
-        <p>{{ page.description }}</p>
+        <p>{{ page.description | newline_to_br }}</p>
     </div>
 </div>
 

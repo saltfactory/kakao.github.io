@@ -674,6 +674,26 @@ body.page-template #cover {
     height: 460px;
 }
 
+body.home-template #cover {
+    background-image: url(../images/default_blog_cover.jpg);
+}
+
+body.post-template #cover {
+    background-image: url(../images/default_post_cover.jpg);
+}
+
+body.page-template #cover {
+    background-image: url(../images/default_page_cover.jpg);
+}
+
+body.author-template #cover {
+    background-image: url(../images/default_author_cover.jpg);
+}
+
+body.tag-template #cover {
+    background-image: url(../images/default_tag_cover.jpg);
+}
+
 body.home-template #cover p,
 body.archive-template #cover p,
 body.page-template #cover p {
@@ -914,6 +934,8 @@ body.tag-template #navbar {
 #post-next {
     display: table-cell;
     width: 50%;
+    background: url(../images/default_post_cover.jpg) no-repeat center;
+    background-size: cover;
 }
 
 #post-prev > *,
