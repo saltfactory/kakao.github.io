@@ -698,7 +698,6 @@ body.home-template #cover p,
 body.archive-template #cover p,
 body.page-template #cover p {
     font-size: 16px;
-    white-space: pre; /* @@iolo */
 }
 
 body.home-template #cover h1 + p,
