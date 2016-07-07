@@ -1,7 +1,7 @@
 ---
 layout: page
 title: kakao의 오픈소스
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_01_opensource.jpg
+image: /files/covers/opensource.jpg
 permalink: /opensource/
 sitemap: yes
 excerpt: kakao의 오픈소스를 소개합니다.

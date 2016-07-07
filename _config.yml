@@ -46,11 +46,11 @@ defaults:
 
 exclude: [README.md, Gemfile, Gemfile.lock]
 
-keep_files: [assets]
+keep_files: [assets, files]
 
 # iolo's custom
 author: oss@kakaocorp.com
-image: 'http://meta-kage.kakaocdn.net/dn/osa/blog/assets/images/default_blog_cover.jpg'
+image: '/assets/images/default_blog_cover.jpg'
 asset_url: /assets
 #asset_url: //meta-kage.kakaocdn.net/dn/osa/blog/assets
 #asset_url: //t1.daumcdn.net/osa/blog/assets

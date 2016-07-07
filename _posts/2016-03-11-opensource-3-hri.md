@@ -4,7 +4,7 @@ title: 'kakao의 오픈소스 Ep3 - HBase Region Inspector'
 author: jg.choi
 date: 2016-03-11 12:55
 tags: [opensource,hbase-region-inspector,hri,hbase,clojure]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_offcuts.jpg
+image: /files/covers/offcuts.jpg
 ---
 <a id="forkme" href="https://github.com/kakao/hbase-region-inspector"></a>
 
@@ -25,7 +25,7 @@ HBase 는 이미 잘 알려져 있으니 긴 설명이 필요하진 않을 것 �
 분산 데이터 저장소이니 당연히 데이터가 여러 서버에 잘 분산 되어 있어야
 scalable 한 성능을 얻을 수 있죠. HBase 는 각 테이블 데이터를 여러 구간으로 나누는데 – RDBMS 의 range partitioning 과 동일한 방식 – 이렇게 나눈 각 구간의 데이터를 리젼 (region) 이라 부르고 분산의 기본 단위로 사용합니다. 다른 데이터 스토어에서는 유사한 개념을 partition, chunk 등의 명칭으로 부르기도 합니다.
 
-![리젼의 개념](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_range-partition-jpg.png)
+![리젼의 개념](/files/hri-range-partition.png)
 
 (이미지 출처: [HBase Architecture Analysis Part1(Logical Architecture)][arch])
 
@@ -33,7 +33,7 @@ HBase 클러스터 성능 관리의 핵심은 바로 이런 리젼들의 분산�
 
 그런데 안타깝게도 HBase 의 Web UI 를 통해서는 이러한 사항들을 효과적으로 파악하기가 힘듭니다. 각 리젼 서버는 다음과 같은 단순한 화면만을 제공하거든요.
 
-![](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_metrics.png)
+![](/files/hri-metrics.png)
 
 지표들을 visual 하게 보여주지 않고 숫자로만 보여주니 상대적인 크고 작음이 머리 속에 잘 그려지지 않습니다. 읽기/쓰기 요청 수도 누적 횟수만 보여줄 뿐, 실제로 중요한 초당 요청 횟수를 보여주지는 않아요.
 
@@ -43,9 +43,9 @@ HBase 클러스터 성능 관리의 핵심은 바로 이런 리젼들의 분산�
 
 분명 비슷한 아쉬움을 느낀 사람들이 있었겠죠. [Hannibal][hannibal] 이라는 오픈소스 모니터링 툴이 있습니다. 다음과 같이 각 리젼 서버에 위치한 리젼들의 크기를 visual 하게 보여줍니다.
 
-![Hannibal 서버 모니터링 화면](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_hannibal-servers.png)
+![Hannibal 서버 모니터링 화면](/files/hri-hannibal-servers.png)
 
-![[Hannibal 리젼 모니터링 화면](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_hannibal-regions.png)
+![[Hannibal 리젼 모니터링 화면](/files/hri-hannibal-regions.png)
 
 좋은 시도인 것은 분명하나 단순히 리젼의 크기 정보만을 보여줄 뿐이라 많은 통찰을 주지는 못합니다. 더 이상 [업데이트 되지 않고][hco] 있기도 합니다.
 
@@ -82,10 +82,10 @@ hbase-region-inspector 는 [실행 가능한 바이너리 또는 JAR 의 형태�
 
 ### Demo
 
-<video autoplay loop muted preload="metadata" crossorigin="anonymous" style="width:100%;">
-            <source src="//meta-kage.kakaocdn.net/dn/osa/blog/content/images/2016_03_hri-obfuscated.webm" type="video/webm">
-            <source src="//meta-kage.kakaocdn.net/dn/osa/blog/content/images/2016_03_hri-obfuscated.ogv" type="video/ogg">
-            <source src="//meta-kage.kakaocdn.net/dn/osa/blog/content/images/2016_03_hri-obfuscated.mp4" type="video/mp4">
+<video autoplay loop muted controls="true" preload="metadata" crossorigin="anonymous" style="width:100%;">
+            <source src="/files/hri.webm" type="video/webm">
+            <source src="/files/hri.ogv" type="video/ogg">
+            <source src="/files/hri.mp4" type="video/mp4">
 </video>
 
 ### 활용 사례
@@ -102,7 +102,7 @@ hbase-region-inspector 는 [실행 가능한 바이너리 또는 JAR 의 형태�
 
 또한 리젼의 개수가 수만개를 넘어가는 대형 클러스터를 대상으로 실행하는 경우, 브라우저가 무척이나 힘들어 하는 모습을 보게 됩니다.
 
-![](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_hri-chrome.png)
+![](/files/hri-chrome.png)
 
 (미안 크롬 ...)
 

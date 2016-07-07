@@ -4,7 +4,7 @@ title: 'kakao의 오픈소스 Ep1 - 대용량 분산 그래프DB "S2Graph"'
 author: shon.0
 date: 2016-01-29 13:11
 tags: [opensource,s2graph,graphdb,hbase,scala]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_RedNeuronal.jpg
+image: /files/covers/neuron.jpg
 ---
 <a id="forkme" href="https://github.com/kakao/s2graph"></a>
 
@@ -20,7 +20,7 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_RedNeuro
 
 "그래프"라고 하면, 보고서나 발표자료에 막대 그래프, 파이 챠트,...를 떠올리지만, 이 글에서 언급하는 그래프는 수학자 오일러에서 시작된 [그래프 이론]의 그래프입니다.
 
-![그래프 이론의 시초 - 쾨니히스베르그 다리 문제](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-bridges.png)
+![그래프 이론의 시초 - 쾨니히스베르그 다리 문제](/files/s2graph-konigsberg-bridges.png)
 
 그래프 이론은 "유한 개의 점들로 이루어진 집합과 점들 간의 연결(관계)를 다루는" 학문입니다. 예를 들면, "어떤 지역과 지역을 최단거리로 이동하려면 어떻게 해야 되는가? 어떤 지점들이 있는데 이 지점들을 중복으로 지나지 않고 한번에 이동할 수 있는가?" 같은 문제를 연구하는 거죠.
 
@@ -34,7 +34,7 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_RedNeuro
 
 이러한 문장들을 단어 그대로 그림으로 표현하면 아래와 같은 "소셜 그래프"가 됩니다:
 
-![소셜 그래프 예](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-sample-001.jpeg)
+![소셜 그래프 예](/files/s2graph-sample-1.jpeg)
 
 위의 그림에서 선(edge)으로 표현된 관계와 활동에 속성(property)을 추가하면 더 의미있는 정보를 표현할 수 있습니다.
 
@@ -42,7 +42,7 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_RedNeuro
 
 실제 카카오의 소셜 그래프도 규모와 속성이 다를 뿐, 아래의 그림과 크게 다르지 않습니다:
 
-![속성이 추가된 소셜 그래프 예](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-sample-002.jpeg)
+![속성이 추가된 소셜 그래프 예](/files/s2graph-sample-2.jpeg)
 
 이런 그래프가 저장되어 있고, 필요할 때 즉시 조회할 수 있다면, 우리는 사용자들을 위해 더 많은 일들을 할 수 있습니다.
 
@@ -84,7 +84,7 @@ RDB로 [너비 우선 탐색]을 구현하려면 대규모의 "JOIN"과 "GROUP B
 
 진짜 실시간(hard real-time)은 아니더라도 거의 실시간(soft real-time) 처리가 가능해야 유혈사태(?)를 막을 수 있을 것입니다.
 
-![바이럴 효과를 위한 실시간 업데이트](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-realtime.png)
+![바이럴 효과를 위한 실시간 업데이트](/files/s2graph-realtime.png)
 
 ### 동적 랭킹 로직 지원
 
@@ -95,11 +95,11 @@ RDB로 [너비 우선 탐색]을 구현하려면 대규모의 "JOIN"과 "GROUP B
 
 트위터는 피드를 구현하기 위해서 푸시 방식을 사용합니다. 이 방식은 사용자가 컨텐츠를 생산할 때(tweet, retweet, follow/unfollow...) 그 컨텐츠를 소비할 사용자(팔로어)들의 피드에 해당 컨텐츠를 추가합니다. 이런 특성 때문에 write fanout 방식이라고도 합니다. 푸시 방식은 컨텐츠 소비(타임라인을 읽을 때) 처리가 간편하고 빠르다는 장점이 있지만, 피드의 내용과 순서를 변경하기 어렵다는 문제점이 있습니다. 불필요한 데이터 추가(트위터를 접은 팔로어의 피드에도 새 트윗을 추가...)로 인한 자원 낭비도 큰 문제입니다.
 
-![기본적인 푸시 방식](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-push.png)
+![기본적인 푸시 방식](/files/s2graph-push.png)
 
 반면, 페이스북은 풀 방식을 사용합니다. 이 방식은 사용자들이 볼 때 컨텐츠의 내용과 순서를 결정합니다. 이런 특성 때문에 read fanout 방식이라고도 합니다. 풀 방식은 컨텐츠 생산(post, like, friend/unfriend...) 처리가 간편하고 빠르다는 장점이 있지만, 컨텐츠 소비 처리가 어렵고 느립니다. 그러나, 피드의 내용과 순서를 변경할 수 있어서 최근에는 더 널리 사용되고 있습니다.
 
-![기본적인 풀 방식](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-pull.png)
+![기본적인 풀 방식](/files/s2graph-pull.png)
 
 가능하다면 풀 방식이 좋겠지만, 서비스의 특성에 따라 푸시 방식이 불가피한 경우도 있습니다. 실제 서비스에서는 풀과 푸시, 둘 다 필요합니다.
 
@@ -107,11 +107,11 @@ RDB로 [너비 우선 탐색]을 구현하려면 대규모의 "JOIN"과 "GROUP B
 
 S2Graph를 적용하기 전, 수동 샤딩과 상호 연결로 얽히고설켜 확장성 없던 아키텍쳐가:
 
-![S2Graph 적용 전](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-before.png)
+![S2Graph 적용 전](/files/s2graph-before.png)
 
 S2Graph를 적용한 후, 깔끔하고 무한 확장가능한 아키텍쳐가 되었습니다:
 
-![S2Graph 적용 후](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-after.png)
+![S2Graph 적용 후](/files/s2graph-after.png)
 
 S2Graph를 처음 공개할 당시만 해도 매일 10억 건 정도의 활동이 추가되었지만, 최근엔 적용한 서비스가 늘면서 매일 30 억 건 정도의 활동이 추가되고 있습니다. 그럼에도 불구하고, 코어의 지속적인 개선을 통해 피크 타임 QPS는 20,000에서 65,000으로, 최대 응답 시간은 100ms에서 50ms이하로 더욱 빨라졌습니다.
 
@@ -123,7 +123,7 @@ S2Graph를 한 문장으로 표현하면:
 
 즉, 실시간 [너비 우선 탐색]을 위한 **그래프 데이터 저장소**와 **그래프 API 서버**입니다.
 
-![S2Graph의 아키텍쳐](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_s2graph-overallarch.png)
+![S2Graph의 아키텍쳐](/files/s2graph-overall-arch.png)
 
 [HBase]를 그래프 데이터 저장소로  사용합니다. HBase/HDFS/Hadoop이 가진 성능, 확장성, 가용성을 그대로 흡수하면서, 실시간 [너비 우선 탐색]에 최적화된 형태로 그래프 데이터를 저장합니다. 저장소 레이어는 물리적 구현체에 독립적으로 설계되어 MySQL을 저장소로 사용할 수도 있습니다.
 

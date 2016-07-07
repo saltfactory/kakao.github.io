@@ -4,7 +4,7 @@ title: 'MySQL InnoDB의 Adaptive Hash Index 활용'
 author: ian.lee
 date: 2016-04-07 16:52
 tags: [devops,mysql,innodb,adaptive-hash-index]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_index.jpg
+image: /files/covers/index.jpg
 ---
 ## 개요
 
@@ -19,7 +19,7 @@ MySQL의 InnoDB의 대표적인 인덱스는 [B-Tree](https://en.wikipedia.org/w
 
 참고로, PK 접근 시 데이터 접근에 소요되는 비용은 `O(logN)`이고,두번 트리에 접근하는 Secondrary Key에 소요되는 비용은 `2 * O(logN)`입니다.
 
-![B-Tree 인덱스: Primary Key vs Secondary Key](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_btree_index.png)
+![B-Tree 인덱스: Primary Key vs Secondary Key](/files/mysql-btree-index.png)
 
 데이터가 아무리 많아져도, 데이터 접근에 소요되는 비용이 크게 증가되지 않음에도, 상황에 따라 효율이 좋지 않습니다. 자주 사용되는 데이터 탐색에도 매번 트리의 경로를 쫓아가야 한다는 것이죠. 게다가 Mutex Lock이 과도하게 잡히게 되면, 적은 데이터 셋에도 불구하고 DB 자원 사용 효율이 떨어지게 됩니다.
 
@@ -27,7 +27,7 @@ MySQL의 InnoDB의 대표적인 인덱스는 [B-Tree](https://en.wikipedia.org/w
 
 InnoDB에서는 앞서 언급한 상황을 해결하기 위해, InnoDB Adative Hash Index 기능이 있습니다. 자주 사용되는 칼럼을 해시로 정의하여, B-Tree 를 타지 않고 바로 데이터에 접근할 수 있는 기능이죠. "Adaptive"라는 단어에서 예상할 수 있겠지만, 모든 값들이 해시로 생성이 되는 것이 아니라, **자주** 사용되는 데이터 값만 내부적으로 판단하여 상황에 맞게 해시 값을 생성합니다.
 
-![Adative Hash Index](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_adaptive_hash_index.png)
+![Adative Hash Index](/files/mysql-adaptive-hash-index.png)
 
 즉, 전체 데이터를 대상으로 해시값을 생성하지는 않는다는 말인데요,
 Adative Hash Index에 할당되는 메모리는 전체 `Innodb_Buffer_Pool_Size`의 `1/64`만큼으로 초기화됩니다.
@@ -111,21 +111,21 @@ where i in (x,x,x,x,x,...x,x,x,,);
 
 CPU는 줄었으나, 쿼리 응답 시간이 줄었기에 처리량 또한 20,000에서 37,000으로 늘어났습니다.
 
-![Database Activity](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_database_activity.png)
+![Database Activity](/files/mysql-database-activity.png)
 
 모든 데이터를 해시로 만들지 않기에, 해시가 켜진 상태에서도 여전히 B-Tree를 통해서 데이터 접근을 합니다. 이 수치는 장기간 테스트 쿼리를 날려보아도 변함이 없습니다.
 
-![Adaptive Hash Search](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_adaptive_hash_search.png)
+![Adaptive Hash Search](/files/mysql-adaptive-hash-search.png)
 
 Semaphore도 크게 줄어들었습니다.
 
-![Semaphores](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_semaphores.png)
+![Semaphores](/files/mysql-semaphores.png)
 
 ## 주의사항
 
 빈번한 데이터 접근이 많은 환경에서는 대단히 효율이 좋은 결과를 나타내었으며, 실제 MySQL을 활용하여 앞선 테스트 환경과 비슷한 서비스에서 효율적으로 잘 활용하고 있습니다. 그러나, 주의를 해야할 점은 오래된 테이블인 경우에도 해시가 여전히 메모리에 남아있을 수 있으며, 이에 대한 제어는 불가합니다.
 
-![Hash Node Size](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_hash_node_size.png)
+![Hash Node Size](/files/mysql-hash-node-size.png)
 
 얼마전, 수개월 전 `pt-online-schema-change` 유틸리티를 사용을 하여 스키마를 변경한 이후, 오래된 테이블을 정리하다가 대형 장애가 발생하였습니다.
 

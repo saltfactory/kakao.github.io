@@ -4,7 +4,7 @@ title: 'Weekly Links #2 - 2016년 4월 넷째주'
 author: ryan
 date: 2016-04-27 10:04
 tags: [weekly,links]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_links.jpg
+image: /files/covers/links.jpg
 ---
 **[Weekly Links](http://tech.kakao.com/tags/weekly/)**에서는 지난 한 주, 카카오의 기술 블로그 담당자가 구독하는 기술 뉴스레터들에서 "인간의 눈"으로 선별한 링크들을 짧은 코멘트와 함께 공유합니다.
 
@@ -86,9 +86,9 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_links.jp
 
 분야가 분야인지라... 고퀄의 슬라이드들이 넘쳐나고 있는데요, 제 눈에 띄는 짤 두개만 소개하면:
 
-[![프로그래밍 언어들의 '잘못되었을때'에 대한 특성 맵](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_ndc2016_1.jpg)](https://twitter.com/debuggerD/status/724772753325191168)
+[![프로그래밍 언어들의 '잘못되었을때'에 대한 특성 맵](/files/links-ndc2016-1.jpg)](https://twitter.com/debuggerD/status/724772753325191168)
 
-[![사실은 매일매일이 도전이긴 합니다](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_ndc2016_2.jpg)](https://twitter.com/elore/status/725133232870580224)
+[![사실은 매일매일이 도전이긴 합니다](/files/links-ndc2016-2.jpg)](https://twitter.com/elore/status/725133232870580224)
 
 BTW, 카카오의 개발자 컨퍼런스는 언제 쯤?
 

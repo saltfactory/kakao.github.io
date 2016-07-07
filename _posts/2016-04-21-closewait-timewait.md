@@ -4,7 +4,7 @@ title: 'CLOSE_WAIT & TIME_WAIT 최종 분석'
 author: kaon.park
 date: 2016-04-21 13:04
 tags: [tcp,close-wait,time-wait,network,socket]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_plug_socket.jpg
+image: /files/covers/plug-socket.jpg
 ---
 > 트래픽이 많은 웹 서비스를 운영하다보면 CPU는 여유가 있지만 웹서버가 응답을 제대로 처리하지 못하고 먹통이 되는 경우를 종종 보게 됩니다. 여러가지 이유가 있겠지만, 이 글에서는 가장 대표적인 경우인 `CLOSE_WAIT` 상태를 재현하고 원인과 문제점 그리고 해결책을 알아봅니다.
 > 나아가 `TIME_WAIT`의 동작 과정을 직접 만든 예제와 리눅스 커널 소스를 통해 확인하고, 인터넷에 퍼진 낡은 그래서 더이상 유효하지 않은 정보들을 바로 잡습니다.

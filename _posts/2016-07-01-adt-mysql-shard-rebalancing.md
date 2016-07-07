@@ -4,7 +4,7 @@ title: 'ADT 활용 예제1: MySQL Shard 데이터 재분배'
 author: gordon.hahn
 date: 2016-07-01 16:48
 tags: [opensource,almighty-data-transmitter,adt,mysql,sharding,devops]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-the_shard.jpg
+image: /files/covers/shard.jpg
 ---
 ## 샤딩의 한계
 
@@ -23,7 +23,7 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-the_
 
 아래 그림과 같이 User ID 기준, Range 방식으로 샤딩을 적용한 어떤 서비스가 있다고 가정하겠습니다. 초창기 샤드는 데이터량이 아주 많고 최근에 추가된 샤드는 다른 쿼리 처리량이 매우 많습니다. 그리고 간혹 초창기 사용자들의 충성도가 높은 서비스의 경우, 초기에 추가한 샤드들도 쿼리량이 적지 않은 경우가 있습니다.
 
-![Range-based 샤딩](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-range-shard.png)
+![Range-based 샤딩](/files/adt-range-shard.png)
 
 
 ### Modulus 방식의 한계
@@ -32,7 +32,7 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-the_
 
 아래 그림과 같이 3개의 샤드에서 4개의 샤드로 확장을 하려면 기존의 각 샤드마다 데이터 재배치가 필요합니다. 현재 샤드 개수의 배수로 확장하면 그나마 쉽게 샤드 추가를 할 수 있지만, 만약 현재 샤드 개수가 수십~수백이라면 적지 않은 낭비가 발생할 수도 있습니다.
 
-![Modulus-based 샤딩](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-modulus-shard.png)
+![Modulus-based 샤딩](/files/adt-modulus-shard.png)
 
 
 ### 그 외: Shard Scale-in/out
@@ -48,7 +48,7 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-the_
 
 **지금부터 ADT를 활용해 하나의 Master를 여러 샤드로 재분배하는 방법을 소개드리겠습니다.**
 
-![Data Copy Layer의 일부를 구현합니다.](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-shard-rebalancer.png)
+![Data Copy Layer의 일부를 구현합니다.](/files/adt-shard-rebalancer.png)
 
 ## ADT Handler 구현하기
 
@@ -315,7 +315,7 @@ DELETE FROM ... WHERE pk=[before.pk]
   - 데이터 충돌 가능성 있음
   - 예시의 그림은 삭제된 데이터가 target에 그대로 남아있는 상황
 
-![삭제된 데이터가 target에 남아있는 상황](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_shard-rebalancing-conflict.png)
+![삭제된 데이터가 target에 남아있는 상황](/files/adt-shard-rebalancing-conflict.png)
 
 #### 전략 2-1. Crawler SELECT할 때 Lock 사용
 * Binlog Processor는 평소대로 실행

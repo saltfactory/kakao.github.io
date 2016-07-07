@@ -4,7 +4,7 @@ title: 'Asynchronous Programming and Monad Transformers in Scala'
 author: liam.m
 date: 2016-05-04 12:57
 tags: [monad,monad-transformer,scala,scalaz,functional-programming]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_monad-1.jpg
+image: /files/covers/monad.jpg
 ---
 자바와 스프링으로 웹서버를 개발하고 있다면 아래와 같이 HTTP 프로그래밍을 했을것이라 생각이 됩니다.
 
@@ -175,7 +175,7 @@ activator-dist-1.3.10/bin/activator ui
 ```
 
 위의 순서로 실행하면 아래와 같은 화면이 브라우저에 뜹니다.
-![activator ui 실행 화면](https://mud-kage.kakaocdn.net/dn/cnZal7/btqcVB1QUrm/bEwWvAXiU5RRYru79Ov2LK/o.png)
+![activator ui 실행 화면](/files/monad-activator-ui.png)
 
 ### Step 1 - Finatra 프로젝트 생성
 [finatra-mysql-seed][46] 프로젝트를 이용하여 finatra를 개발하는 과정에 대하여 설명하겠습니다.
@@ -185,7 +185,7 @@ finatra-mysql-seed project는 finatra를 이용해서 개발하면서  재사용
 
 * 선택 1(권장) - activator의 ui에서 `finatra-mysql-seed`검색해서 seed 프로젝트를 설치할 수 있습니다.
 
-![activator ui를 이용한 finatra-mysql-seed 프로젝트 설치](https://mud-kage.kakaocdn.net/dn/hHgLw/btqcVrSsw9M/OrNjVte8LKcav3atRyOsiK/o.png)
+![activator ui를 이용한 finatra-mysql-seed 프로젝트 설치](/files/monad-activator-ui-create-app.png)
 
 * 선택 2 - activator ui의 사용을 원하지 않을 경우 command line에서 아래 명령어를 실행하면 됩니다.
 
@@ -421,14 +421,14 @@ class FinatraServer extends HttpServer {
 
 ### Asynchronous vs Synchronous
 이제 간단히 동작할수 있는 비동기 프로그램이 완성이 되었습니다. 이를 간단한 벤치마크를 통해서 async와 sync의 결과값을 비교해보겠습니다.
-![async와 sync의 성능 비교](https://mud-kage.kakaocdn.net/dn/kbDKr/btqcUToBZPh/svPTNVw65dYvDrXo4zlW81/o.png)
+![async와 sync의 성능 비교](/files/monad-async-vs-sync.png)
 위의 코드를 실행결과를 보면 4초의 IO Waiting이 걸리는 외부와 통신을 할때
 
 * Sync IO - 6개의 request를 처리하는데 약 17초가 걸렸습니다. Thread가 blocking되기 때문에 동기화 코드는 서버의 `가용 thread 수`가 성능이 중요한 포인트가 됩니다.
 * Async IO - 같은 서버에 6개의 request를 처리하는데 약 4.3초가 걸렸습니다. 여러개의 request가 비동기로 병렬로 처리가 되었습니다.
 
 Async 코드에 대해서 Client의 Request를 50개까지 늘려서 성능을 측정해보겠습니다.
-![50개 thread를 이용한 async 성능 측정](https://mud-kage.kakaocdn.net/dn/bOnoir/btqcVwsHeGL/JPxULbAie2ZS7uZ5frIKhK/o.png)
+![50개 thread를 이용한 async 성능 측정](/files/monad-async-50-threads.png)
 
 * 정확한 수치는 아니지만 50개의 request를 처리하는데 15초가 걸렸습니다. Async IO는 4초의 waiting이 발생하는 외부와 통신에서도 많은 수의 request에 대해서도 동시 처리가 가능합니다.
 

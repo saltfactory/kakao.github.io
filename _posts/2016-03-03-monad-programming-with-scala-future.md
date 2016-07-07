@@ -4,11 +4,11 @@ title: 'Monad Programming with Scala Future'
 author: liam.m
 date: 2016-03-03 10:49
 tags: [monad,scala,scalaz,functional-programming]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_monad-1.jpg
+image: /files/covers/monad.jpg
 ---
 함수형 언어에 대해서 공부를 하다보면 언제나 **Monad**라는 녀석을 마주치게 됩니다. [Category Theory][1]의 수학적인 개념이 바탕이 되어 있는 Monad를 접하면 어렵고 난해해서, 많은 사람들이 Monad를 학습하는 과정에서 함수형 언어를 포기합니다. 하지만 Monad라는 장벽을 넘어서고 나면, 아니 조금만 이해하고 나면 함수형 언어를 개발하는데 있어서의 이해도와 생산성이 급속도로 높아지게 됩니다. [Learning Curves (for different programming languages)][2]라는 글에 보면 여러 언어의 학습과정에서 나타다는 다양한 특징을 그래프로 보여줍니다. 그 중에 Haskell의 경우 Monad의 대한 이해 과정을 거치기 전과 후가 확연하게 차이가 나는 것을 볼 수 있습니다.
 
-![Haskell 학습 곡선](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_haskell-learning-curves.png)
+![Haskell 학습 곡선](/files/monad-haskell-learning-curves.png)
 
 이 글에서는, 필자가 Monad를 이해하기 위해 겪었던 방황 - 혼돈, 의문, 좌절 - 과 적응, 마침내 갖고놀기에 이르는 과정을 소개하고, Scala의 [Future][13]를 이용한 예제를 통해 Monad에 한발짝 다가가 보려고 합니다.
 
@@ -16,7 +16,7 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_monad-1.
 
 Monad 공부의 시작은 늘 그랬듯이 [구글링을 통한 검색][14]이었습니다. 구글의 [페이지 랭크 알고리즘][19]이 추천해주는 링크를 따라서 생각없이 위키피디아의 [Monad (category theory)][1]로 첫 문을 열었죠:
 
-![위키피디아의 Monad 페이지(일부)](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_monad-wikipedia.png)
+![위키피디아의 Monad 페이지(일부)](/files/monad-wikipedia.png)
 
 > <img src="http://item-kr.talk.kakao.co.kr/do/-26p06+UqCd0OAgiRHNZwHaq4FJCveCBKCNZV-bZscw_/09632d0f859f20907e11d3d4ec51e95b1667fc7b08261b4c493670baa83d5cb9" class="pull-right"/>
 > `방황`
@@ -67,7 +67,7 @@ interface M<T> {
 
 이번엔 그림으로 설명하는 Monad**s**([Functors, Applicatives, And Monads In Pictures][8], [번역글][9])를 보았습니다:
 
-![그림으로 설명하는 Monads](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_functor-applicative-monad.png)
+![그림으로 설명하는 Monads](/files/monad-functor-applicative.png)
 
 > <img src="http://item-kr.talk.kakao.co.kr/do/-26p06+UqCd0OAgiRHNZwHaq4FJCveCBKCNZV-bZscw_/0ca8154bc95d4feab40064374cd9aeca1667fc7b08261b4c493670baa83d5cb9" class="pull-right" />
 > `좌절`
@@ -87,11 +87,11 @@ Scala 공부하는데 있어서 바이블로 불리는 [Coursera][17]의 두 개
 
 Martin Ordersky는 대학 교수님답게 모나드의 수학적인 기초와 이를 Scala로 예를 들어가면서 차근차근 알려줍니다:
 
-![Martin Ordersky의 Monad의 3개의 법칙에 대한 설명(일부)](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_martin-monad.png)
+![Martin Ordersky의 Monad의 3개의 법칙에 대한 설명(일부)](/files/monad-martin.png)
 
 또한 Eric Meijer는 [어둠의 해커 출신][18]답게, 개발자에게 좀 더 친숙하게 실용적인 측면에서의 모나드를 활용한 프로그래밍을 - 모나드를 사용하면 어떤게 좋아진다는 걸 - 알려줍니다:
 
-![Eric Meijer의 Try\[T\] 타입에 대한 설명(일부)](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_eric-monad.png)
+![Eric Meijer의 Try\[T\] 타입에 대한 설명(일부)](/files/monad-eric.png)
 
 Eric Meijer는 [MS에서 Haskell을 이용한 함수형 언어 강좌][21]를 꾸준히 했었고, 현재 edx.org에서도 [Introduction to Functional Programming][20]이란 주제로 강의를 하고 있습니다.
 
@@ -133,7 +133,7 @@ f onSuccess {
 
 쇼핑몰에서 유저가 주문정보페이지를 통해 주문내역을 조회 할 수 있는 프로그램을 구현해보겠습니다. 실제 구현은 이보다 복잡하겠지만, 최소한의 핵심 기능과 동기화 프로그래밍에서 발생하는 *Blocking I/O*를 중심으로 그려보면 아래와 같습니다:
 
-![주문 상품 내역 조회 Flow - Blocking I/O](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_orderviewflow.png)
+![주문 상품 내역 조회 Flow - Blocking I/O](/files/monad-order-view-flow.png)
 
 이 *Blocking I/O* 구간을 *Non Blocking I/O*로 바꿔 보겠습니다.
 
@@ -150,7 +150,7 @@ NIO를 활용하기 위해서는 다양한 라이브러리 혹은 프레임웍�
 
 하지만... 참기로 했습니다.
 
-<img src="http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_reinventing_the_wheel.png" class="hcenter"/>
+<img src="/files/monad-reinventing-the-wheel.png" class="hcenter"/>
 * 이미지 출처: [
 Are you guilty of being a proposal caveman?](http://www.inspirewins.com/blog/are-you-guilty-of-being-a-proposal-caveman)
 
@@ -218,7 +218,7 @@ $http.get('/v1/api/some/path/')
 
 Callback? Callback!! Callback 패턴은 [Callback Hell][27]이라 불리는 악명 높은 Anti-pattern 아닌가?
 
-<img src="http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_callback-hell.gif" class="hcenter"/>
+<img src="/files/monad-callback-hell.gif" class="hcenter"/>
 * 이미지 출처: [JavaScript - Controllable, Multiple jQuery - Callback Hell](http://icompile.eladkarako.com/javascript-controllable-multiple-jquery-callback-hell/)
 
 #### Step 4 - for comprehension을 이용한 함수 합성
@@ -307,17 +307,17 @@ Scalaz의 `Task`와 Scala의 `Future`은 return 값을 cache 하는 방식 이�
 
 * Scala Future : `futureA.flatMap(a => futureB)` 은 다른 thread에서 futureB가 실행됩니다:
 
-![Scala Future의 callback 처리 방식](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_scala-future-callback.png)
+![Scala Future의 callback 처리 방식](/files/monad-scala-future-callback.png)
 
 * Scalaz Task :  `taskA.flatMap(a => taskB)`는 taskA와 같은 thread에서 taskB가 실행되어 context switching를 줄이는 최적화 기법도 적용되어 있습니다:
 
-![Scalaz Task의 callback 처리 방식](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_scalaz-task-callback.png)
+![Scalaz Task의 callback 처리 방식](/files/monad-scalaz-task-callback.png)
 
 #### Scala Future vs. Scalaz Task 성능 비교
 
 벤치마크를 보면 trampoline과 그에 대한 optimize에 대해서 성능이 많이 차이나는 것을 확인할 수 있습니다.
 
-![Scala Future vs. Scalaz Task 성능 비교](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_futuretaskplot.png)
+![Scala Future vs. Scalaz Task 성능 비교](/files/monad-future-task-plot.png)
 
 자세한 내용은 [Higher Order 블로그의 Easy Performance Wins With Scalaz 포스트](http://blog.higher-order.com/blog/2015/06/18/easy-performance-wins-with-scalaz/)를 참조하세요.
 

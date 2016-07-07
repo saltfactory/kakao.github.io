@@ -4,7 +4,7 @@ title: 'Weekly Links #1 - 2016년 4월 첫째주'
 author: ryan
 date: 2016-04-07 16:50
 tags: [weekly,links]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_04_links.jpg
+image: /files/covers/links.jpg
 ---
 **[Weekly Links](http://tech.kakao.com/tags/weekly/)**에서는 지난 한 주, 카카오의 기술 블로그 담당자가 구독하는 기술 뉴스레터들에서 "인간의 눈"으로 선별한 링크들을 짧은 코멘트와 함께 공유합니다.
 

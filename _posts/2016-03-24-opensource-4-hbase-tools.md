@@ -4,7 +4,7 @@ title: 'kakao의 오픈소스 Ep4 - HBase Tools'
 author: terence.yoo
 date: 2016-03-24 14:30
 tags: [opensource,hbase-tools,hbase-table-stat,hbase-manager,hbase-snashot,hbase]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_swiss_army_knife.jpg
+image: /files/covers/swiss-army-knife.jpg
 ---
 <a id="forkme" href="https://github.com/kakao/hbase-tools"></a>
 
@@ -40,13 +40,13 @@ HBase 클러스터의 상태는 메트릭을 통해서 확인이 가능합니다
 
 성능 모니터링을 할 때는 작업 단위가 테이블일 경우가 많기 때문에 테이블 중심으로 메트릭을 조회해야 하는 경우가 많습니다. 하지만 위에서 언급한 툴들은 메트릭을 테이블 중심으로 조회하고자 할 때 어려움이 있습니다. 첫째로 테이블 중심의 메트릭을 조회하는 기능이 아예 없거나 있더라도 빈약합니다. HBase Web UI에는 테이블 별로 메트릭을 집계 하는 기능이 없고, CM에서는 테이블 별로 집계는 가능하나 여러 테이블의 여러 메트릭을 한 눈에 확인하기가 불편합니다. 둘째로 메트릭의 변화량을 민첩하게 보여주지 못합니다. HBase Web UI는 변화량을 보여주는 기능이 아예 없고, CM은 갱신 주기가 길어서 세밀한 변화를 빠르게 모니터링 하기에는 부족합니다.
 
-![hbase-table-stat](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_hbase-table-stat.png)
+![hbase-table-stat](/files/hbase-table-stat.png)
 
 이러한 부족함을 해결하기 위해서 `dstat`, `vmstat`, `iostat` 류의 커맨드라인 툴들과 비슷한 hbase-table-stat을 만들었습니다. hbase-table-stat은 커맨드라인에서 작동하며 10초(기본값, 변경 가능) 간격으로 여러 개의 메트릭을 조회해서 보여 줍니다. 이때 모든 메트릭들은 테이블 중심으로 집계됩니다. 또한 매트릭의 절대값 뿐만 아니라, 변화량 까지 한 번에 보여주어서 한 눈에 여러 정보를 확인 할 수 있습니다. 그리고 각 메트릭 별로 소트도 가능합니다. 웹서버 기능을 내장하고 있어서 커맨드라인에서 보이는 내용 그대로를 웹브라우저를 통해서 다른 사용자들에게 공유할 수도 있습니다.
 
 ## 3. hbase-manager
 
-![리전서버에 분산된 HBase의 테이블](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_hbase-table-across-region.png)
+![리전서버에 분산된 HBase의 테이블](/files/hbase-table-across-region.png)
 
 HBase에서 데이터는 테이블(table)에 저장되고, 각 테이블은 리전(region)이라는 단위로 나뉘어져서 리전서버에서 서비스 됩니다. 그래서 HBase 운영 과정에서는 테이블과 리전을 잘 다루는 기술이 중요합니다. 테이블이나 리전 관리는 보통 쉘(HBase shell)에서 하게 되는데, 쉘에서는 split, merge, major compact, balance, move 등의 기본적인 기능들만 제공하고 있습니다. 복잡한 작업을 할 때는 이런 기본 기능들을 조합해서 사용해야 합니다.
 

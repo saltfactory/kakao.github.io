@@ -4,7 +4,7 @@ title: 'kakao의 오픈소스 Ep2 - MRTE(MySQL Realtime Traffic Emulator)'
 author: matt.lee
 date: 2016-02-16 13:11
 tags: [opensource,mysql-realtime-traffic-emulator,mtre,mysql,go]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_traffic.jpg
+image: /files/covers/traffic.jpg
 ---
 <a id="forkme" href="https://github.com/kakao/MRTE-Collector"></a>
 
@@ -22,7 +22,7 @@ MySQL 서버를 사용하면서, 가끔씩 실 서비스용 MySQL 서버(Product
 
 MRTE는 크게 유저 트래픽을 수집하는 MRTE-Collector와 수집된 SQL을 재현하는 MRTE-Player로 구성되어 있는데, MRTE-Collector와 MRTE-Player는 Message Queue ([Rabbit MQ](http://www.rabbitmq.com))를 이용해서 통신하도록 설계되었습니다.
 
-![MRTE Collector와 Player 전체적인 아키텍쳐](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_mrte.png)
+![MRTE Collector와 Player 전체적인 아키텍쳐](/files/mrte-overall-arch.png)
 
 * [MRTE-Collector]: Source MySQL 서버에서 네트워크 트래픽을 캡쳐하는 Message Queue로 전달
 * [MRTE-Player]: Message Queue의 네트워크 패킷을 가져와서 분석하고 Target MySQL 서버로 전달(실행)
@@ -38,7 +38,7 @@ MRTE는 크게 유저 트래픽을 수집하는 MRTE-Collector와 수집된 SQL�
 
 아래 그래프는 MRTE-Collector가 실행중인 MySQL 서버의 CPU 사용량인데, 잠깐 MRTE-Collector를 멈췄을 때 CPU 사용량이 얼마나 떨어지는지를 보여주고 있습니다:
 
-![MRTE의 CPU 사용량](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_mtre-cpuusage1.png)
+![MRTE의 CPU 사용량](/files/mtre-cpu.png)
 
 그리고 MRTE-Collector는 `tcpdump`나 `ngrep` 명령과 같이 `pcap` 라이브러리를 이용하기 때문에 매우 안정적으로 패킷을 캡쳐할 수 있다. 실제 `sysbench`로 초당 35000 쿼리가 실행되는 환경에서도 MRTE-Collector 시작 및 종료(패킷 캡쳐 시작 및 종료)시에도 서비스에 특별한 성능 악 영향은 보이지 않았다. 또한 Message Queue나 MRTE-Collector가 문제를 일으켜 제대로 처리하지 못할 때에는, `pcap` 라이브러리는 MRTE-Collector의 처리를 기다리지 않고 수집된 패킷을 버리고 무시하기 때문에 유저의 네트워크 패킷을 블록킹하지는 않습니다.
 
@@ -61,7 +61,7 @@ MRTE 도구의 안정성과 성능 확인을 위해서 서버 4대를 아래와 
 
 테스트는 대략 60개 정도의 Connection을 이용해서 초당 30000 QPS(22000 SELECT, 5000 UPDATE, 1600 INSERT, 1600 DELETE) 정도의 SQL을 처리하고 있었으며, MRTE-Collector와 MRTE-Player 모두 Internal queue가 평균 0~1개 정도만 쌓일 정도로 무리 없이 처리하고 있는 상태로 진행되었습니다. 아래 그래프는 테스트 도중 Source와 Target MySQL 서버의 Query activity를 보여주는 그래프입니다. (Source와 Target MySQL 서버 모두 그래프의 스파이크 현상은 MRTE와는 무관한 것임)
 
-![MRTE 환경에서의 QPS](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_mtre-qps.png)
+![MRTE 환경에서의 QPS](/files/mtre-qps.png)
 
 이 테스트 환경으로 대략 3주 정도 계속 `sysbench` 트래픽을 Target MySQL 서버로 전송하는 테스트중에도 별다른 문제가 발생하지 않았으며, MRTE-Collector를 10분 단위로 종료했다가 재시작하는 테스트도 대략 1주일 정도 진행했었는데 특별히 문제 상황은 발생하지 않았습니다.
 
@@ -69,8 +69,8 @@ Rabbit MQ가 정상적으로 설치(모니터링 플러그인까지)되었다면
 
 MRTE-Collector와 MRTE-Player 소스 코드는 아래 Github 사이트에서 참조해볼 수 있습니다:
 
-* https://github.com/kakao/MRTE-Collector
-* https://github.com/kakao/MRTE-Player
+* [https://github.com/kakao/MRTE-Collector](https://github.com/kakao/MRTE-Collector)
+* [https://github.com/kakao/MRTE-Player](https://github.com/kakao/MRTE-Player)
 
 > 이 글은 카카오 DB팀의 기술 블로그 DB Smalltalk에 포스팅한 [MRTE를 이용한 MySQL Real Service 트래픽 테스트 환경 구축](http://small-dbtalk.blogspot.kr/2015/01/mrte-mysql-real-service.html)을 옮긴 것입니다.
 

@@ -4,7 +4,7 @@ title: "카카오스토리 팀의 코드 리뷰 도입 사례 - 코드 리뷰, �
 author: steve.ahn
 date: 2016-02-04 13:11
 tags: [code-review]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_codereview.jpg
+image: /files/covers/codereview.jpg
 ---
 >얼마 전, 렘(Realm)의 기술 블로그에 올라온 [코드리뷰, Github로 바로 적용하기 - Realm에서의 코드리뷰 소개](https://realm.io/kr/news/codereview-howto/)라는 글이 많이 회자되었죠.
 >

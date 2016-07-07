@@ -4,7 +4,7 @@ title: '그래, 가끔 "Vim에서" GitHub을 보자!'
 author: jg.choi
 date: 2016-03-03 10:45
 tags: [vim,vim-plugin,vim-github-dashboard]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_dashboard.jpg
+image: /files/covers/dashboard.jpg
 ---
 `vimrc` 건드리기 좋은 목요일입니다. ;)
 
@@ -12,7 +12,7 @@ image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_dashboar
 
 https://github.com/junegunn/vim-github-dashboard
 
-![vim-github-dashboard 실행 화면](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_vim-github-dashboard-1.png)
+![vim-github-dashboard 실행 화면](/files/vim-ghd-1.png)
 
 Vim 상에서 [GitHub API](https://developer.github.com/v3/)를 이용해 dashboard 페이지를 보여주는 플러그인입니다. 왜 멀쩡한 브라우저를 놔두고 이런 짓을 한 것이냐 물으신다면 ... 그것 참 좋은 질문이네요.
 
@@ -31,7 +31,7 @@ Public GitHub 의 경우 조회만 하는 경우는 인증이 필요 없기 때�
 :GHD! junegunn
 ```
 
-![GHD 명령으로 사용자의 대시보드 보기](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_vim-github-dashboard-2.png)
+![GHD 명령으로 사용자의 대시보드 보기](/files/vim-ghd-2.png)
 
 `CTRL-N` / `CTRL-P` 로 링크 사이를 이동할 수 있고, `Enter` key 나 `o`를 누르면 해당 페이지가 브라우저에서 열립니다.
 
@@ -47,7 +47,7 @@ GHA 커맨드도 마찬가지 방식으로 사용합니다.
 :GHA! torvalds
 ```
 
-![GHA 명령으로 torvalds의 활동 보기](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_vim-github-dashboard-3.png)
+![GHA 명령으로 torvalds의 활동 보기](/files/vim-ghd-3.png)
 
 [Linus](https://github.com/torvalds) 선생님이 무얼하며 지내시는지 볼 수도 있고요,
 
@@ -55,7 +55,7 @@ GHA 커맨드도 마찬가지 방식으로 사용합니다.
 :GHA! torvalds/linux
 ```
 
-![GHA 명령으로 linux 프로젝트의 활동 보기](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_vim-github-dashboard-4.png)
+![GHA 명령으로 linux 프로젝트의 활동 보기](/files/vim-ghd-4.png)
 
 [Linux](https://github.com/torvalds/linux)에 무슨 일들이 벌어지고 있는지도 간단히 확인할 수 있습니다.
 

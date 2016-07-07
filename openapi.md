@@ -1,7 +1,7 @@
 ---
 layout: page
 title: kakao의 오픈API
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_02_openapi.png
+image: /files/covers/openapi.jpg
 permalink: /openapi/
 sitemap: yes
 excerpt: kakao의 오픈API를 소개합니다.

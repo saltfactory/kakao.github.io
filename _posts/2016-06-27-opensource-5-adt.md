@@ -4,7 +4,7 @@ title: 'kakao의 오픈소스 Ep5 - Almighty Data Transmitter'
 author: gordon.hahn
 date: 2016-06-27 11:19
 tags: [opensource,almighty-data-transmitter,adt,mysql,sharding,devops]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-swiss_army_knife.jpg
+image: /files/covers/swiss-army-knife.jpg
 ---
 <a id="forkme" href="https://github.com/kakao/adt"></a>
 
@@ -45,7 +45,7 @@ ADT 자체가 하는 일은 단순합니다.
  - Binary Log Receiver: 실시간으로 변경되는 데이터 수집
 - 수집한 데이터를 사용자가 구현한 Custom Handler로 전달
 
-![ADT Overall Architecture](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_06_adt-overall-architecture.png)
+![ADT Overall Architecture](/files/adt-overall-arch.png)
 
 <img src="http://item-kr.talk.kakao.co.kr/do/-26p06+UqCd0OAgiRHNZwPf1+nqjcFZi42Z3wogPJ3I_/553d0111a2757661a4c5bde97bdc88cb1667fc7b08261b4c493670baa83d5cb9" class="pull-right" />
 용도에 따라 Custom Handler를 구현하는 게 허들이라면 허들일 수 있지만, [샤드 재분배용 커스텀 핸들러](https://github.com/kakao/adt/tree/master/adt-handler-parent/adt-handler-mysql-shard-rebalancer/src/main/java/com/kakao/adt/handler/msr)의 소스 코드를 참조하면 그렇게 어렵지 않....을 겁니다. 아마도...요.
@@ -75,5 +75,5 @@ ADT를 만들게 된 이유이자 핵심 목표인 **샤드 재분배용 커스�
 
 > special thanks to [성동찬](http://gywn.net) (한국카카오 카카오뱅크)
 
-* 커버 이미지 출처: [Swiss Army Knife on black](https://flic.kr/p/9mLNPi) &copy; [Edgar Pierce](https://www.flickr.com/photos/edgarpierce/)
+* 커버 이미지 출처: [Swiss Army Knife - 3](https://flic.kr/p/7vQc3w) &copy; [Tom Von Lahndorff](https://www.flickr.com/photos/tomvon/
 * 데이터베이스 아이콘 출처: http://www.seaicons.com/database-icon/

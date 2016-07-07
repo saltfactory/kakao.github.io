@@ -4,7 +4,7 @@ title: 'Redis의 SCAN은 어떻게 동작하는가?'
 author: clark.kang
 date: 2016-03-11 11:12
 tags: [redis,redis-scan,redis-keys]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_observatory.jpg
+image: /files/covers/observatory.jpg
 ---
 <img src="http://item-kr.talk.kakao.co.kr/do/2FPpx81E0V62RDSr-GVgQXaq4FJCveCBKCNZV-bZscw_/872b56c06d9ac5bc264419e187b346041667fc7b08261b4c493670baa83d5cb9" class="pull-right" />
 [Redis](http://redis.io)의 기능 중에 쓰면 안되지만, 그 단맛에 끌려 어쩔 수 없이 치게 되는 명령이 [KEYS](http://redis.io/commands/keys)입니다. KEYS를 쓰는 순간, Redis는 이 명령을 처리하기 위해서 멈춰버립니다. 특히 트래픽이 많은 서버는 이 KEYS 명령 하나 때문에 많은 장애를 내게 됩니다.

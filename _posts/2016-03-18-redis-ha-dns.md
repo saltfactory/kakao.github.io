@@ -4,7 +4,7 @@ title: 'DNS 기반의 Redis HA 구현'
 author: alden.kang
 date: 2016-03-18 13:32
 tags: [devops,redis,ha,dns]
-image: http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_railway_switch.jpg
+image: /files/covers/railway-switch.jpg
 ---
 이번 글에서는 DNS 기반의 Redis HA에 대한 이야기를 해보려고 합니다.
 DNS TTL이 무엇인지 그리고 그것을 어떻게 이용해서 Redis HA를 구현했는지 살펴보겠습니다.
@@ -18,7 +18,7 @@ DNS TTL이 무엇인지 그리고 그것을 어떻게 이용해서 Redis HA를 �
 
 리눅스에서는 간단하게 `dig` 명령으로 `TTL` 시간을 알 수 있습니다.
 
-![kakao.com에 대한 도메인 질의 결과](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_dig_kakao.png)
+![kakao.com에 대한 도메인 질의 결과](/files/redis-ha-dig-kakao.png)
 
 위 스크린샷은 `www.kakao.com`에 대한 도메인 질의 결과입니다.
 
@@ -39,7 +39,7 @@ Redis HA에서도 이런 방식을 사용해보려고 합니다.
 
 ## 동작 원리
 
-![Redis HA 동작 원리동작](http://meta-kage.kakaocdn.net/dn/osa/blog/content_images_2016_03_redis_ha_dns.png)
+![Redis HA 동작 원리동작](/files/redis-ha-dns.png)
 
 원리는 이렇습니다. master 역할을 하는 Redis 서버에 대표 도메인을 설정합니다. 예를 들어 A라는 서비스에서 사용할 Redis라고 한다면 `A.redis.domain.com`과 같은 방식입니다. 모니터링 서버에서는 master 서버에 대한 connect 및 간단한 `GET/SET` 테스트를 해서 살아 있음을 확인합니다. 이렇게 모니터링하다가 master 서버에 이상이 생기게 된다면 `A.redis.domain.com` 에 바인딩되어 있던 IP를 slave 역할을 하는 Redis 서버로 바꾸게 됩니다. 클라이언트에서는 A.redis.domain.com이라는 도메인을 통해서 Redis 서버에 접속을 하기 때문에 master 서버가 죽는 순간 잠시 단절이 있긴 하겠지만 도메인에 매핑된 IP 주소가 slave 서버로 바뀌기 때문에 금방 다시 커넥션을 맺어서 Redis를 사용할 수 있습니다. 이것도 TTL이 0이기 때문에 클라이언트가 바뀐 IP 주소로 바로 붙을 수 있게 되는 원리입니다.
 
