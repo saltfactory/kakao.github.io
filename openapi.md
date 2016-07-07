@@ -1,7 +1,7 @@
 ---
 layout: page
 title: kakao의 오픈API
-image: /files/covers/openapi.jpg
+image: /files/covers/openapi.png
 permalink: /openapi/
 sitemap: yes
 excerpt: kakao의 오픈API를 소개합니다.
