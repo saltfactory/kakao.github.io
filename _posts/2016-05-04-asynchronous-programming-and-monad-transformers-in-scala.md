@@ -51,7 +51,7 @@ The play framework at Linkedin](http://www.slideshare.net/brikis98/the-play-fram
 ![Synchronous (left) vs asynchronous (right) request processing](https://cdn-images-1.medium.com/max/1600/1*XZlkILfsMj8nOnnXj5bnqw.png)
 * 이미지 출처: [The Future of Asynchronous IO in Python](https://medium.com/@paulcolomiets/the-future-of-asynchronous-io-in-python-ce200536d847)
 
-Spring 3.2버전 부터 [비동기 프로그래밍][13]을 지원하고 있고 [`AsyncRestTemplate.java`][37] API을 통해서 비동기 HTTP 프로그래밍을 지원하고 있지만 실제 개발 환경에서 여러개의 `Future` 효율적으로 조합(`flatMap`, [Monad Transformers][38]) 할수 없다면 이를 효과적으로 사용할수 없습니다. 이로 인해 부분적으로만 비동기 프로그래밍으로 구현한다면 블록킹 IO로 인해 스레드 waiting현상, `thread pool hell`은 피할수 없게 됩니다.
+Spring 3.2버전 부터 [비동기 프로그래밍][13]을 지원하고 있고 [`AsyncRestTemplate.java`][37] API을 통해서 비동기 HTTP 프로그래밍을 지원하고 있지만 실제 개발 환경에서 여러개의 `Future`를 효율적으로 조합(`flatMap`, [Monad Transformers][38]) 할수 없다면 이를 효과적으로 사용할수 없습니다. 이로 인해 부분적으로만 비동기 프로그래밍으로 구현한다면 블록킹 IO로 인해 스레드 waiting현상, `thread pool hell`은 피할수 없게 됩니다.
 
 지난번 포스팅에서 이야기 했던 [`Monad Programming with Scala Future`][39]에 이어를 `Future`를 Monad Transformers와 함께 사용하며 실전 web server programing에서 활용하고 이를 통해서 thread pool hell을 막을수 있는 방법에 대해서 알아보도록 하겠습니다.
 
