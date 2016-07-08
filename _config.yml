@@ -35,7 +35,7 @@ collections:
 defaults:
   - scope:
       path: ''
-      type: _authors
+      type: authors
     values:
       layout: author
   - scope:
