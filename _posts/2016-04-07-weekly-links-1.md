@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Weekly Links #1 - 2016년 4월 첫째주'
-author: ryan
+author: iolo.fitzowen
 date: 2016-04-07 16:50
 tags: [weekly,links]
 image: /files/covers/links.jpg

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Weekly Links #2 - 2016년 4월 넷째주'
-author: ryan
+author: iolo.fitzowen
 date: 2016-04-27 10:04
 tags: [weekly,links]
 image: /files/covers/links.jpg

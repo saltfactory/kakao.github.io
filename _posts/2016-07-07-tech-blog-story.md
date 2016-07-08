@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'kakao 기술 블로그가 GitHub Pages로 간 까닭은'
-author: ryan
-date: 2016-07-08 15:25
+author: iolo.fitzowen
+date: 2016-07-07 15:25
 tags: [github-pages,jekyll,static-site-generator]
 image: /files/covers/blog.jpg
 ---
@@ -12,7 +12,7 @@ kakao 기술 블로그는 올해 초 [Ghost] 블로깅 플랫폼을 사용해서
 기능들 - 태그별 포스트 목록 페이지, 작성자별 포스트 목록 페이지, 사이트맵 - 을 소개합니다.
 <!--more-->
 
-## kakao 기술 블로그 이야기
+## Prologue
 
 <img src="http://item.kakaocdn.net/do/-26p06+UqCd0OAgiRHNZwHaq4FJCveCBKCNZV-bZscw_/89caada5a1ddde2795b892cae089b4da1667fc7b08261b4c493670baa83d5cb9" class="hcenter"/>
 
@@ -49,7 +49,7 @@ kakao 기술 블로그는 올해 초 [Ghost] 블로깅 플랫폼을 사용해서
 자세한 내용은 [GitHub Pages에서 Jekyll을 정적 사이트 생성기로 사용하기](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages)에게 맡기고,
 이 글에서는 kakao 기술 블로그를 만들면서 추가한 기능들만 소개하겠습니다.
 
-## 태그별 포스트 목록 페이지
+### 태그별 포스트 목록 페이지
 
 [Jekyll]은 직접적으로 태깅(tagging)을 지원하지 않습니다.
 이를 지원하는 여러가지 플러그인들을 테스트 해보았지만, 아쉽게도 [GitHub Pages]와 함께 쓸 수 없는 경우가 많았습니다.
@@ -172,7 +172,7 @@ image: /files/covers/opensource.jpg
 좀 더 쉽고 효율적으로 만들 수 있을것 같지만, 플러그인을 만들어야 해서 pass!
 (포스트가 수만개, 태그가 수만개라면, 그냥 데이터베이스 기반 블로그를 쓰시는 것이 정신 건강에 좋습니다.)
 
-## 작성자별 포스트 목록 페이지
+### 작성자별 포스트 목록 페이지
 
 [Jekyll]은 작성자라는 개념(author attribution)을 지원하지 않습니다.
 애초에 흔한 웹UI도 없으니, 로그인도 없고, 작성자라는 개념도 없죠.
@@ -246,7 +246,7 @@ layout: default
 3. `_authors` 디렉토리를 만들고, 그 아래에 각 사용자마다
 하나의 파일(예: [`ryan.md`](https://raw.githubusercontent.com/kakao/kakao.github.io/master/_authors/ryan.md))을 만듭니다.
 
-```
+```markdown
 ---
 name: ryan
 title: 라이언
