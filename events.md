@@ -78,5 +78,5 @@ tags: [events]
 * 장소: 신림동 쉐라톤서울 호텔 디큐브시티
 
 ---
-문의: [oss@kakaocorp.com](mailto:oss@kakaocorp.com)
+문의: [opensource@kakaocorp.com](mailto:opensource@kakaocorp.com)
 
