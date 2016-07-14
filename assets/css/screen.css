@@ -615,6 +615,9 @@ a.tag:hover {
 
 #pagination > li > a {
     color: #1e1e1e;
+    width: 100%;
+    height: 100%;
+    display:block;
 }
 
 #page-prev {
@@ -1626,4 +1629,3 @@ body.page-template {
         background-image: url(../images/mo/default_pic_l@3x.png);
     }
 }
-
