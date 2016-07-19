@@ -892,6 +892,11 @@ body.tag-template #navbar {
     margin: 0;
 }
 
+#post-content .footnotes p {
+    margin: 0;
+    text-align: left;
+}
+
 #post-footer {
     position: relative;
     height: 120px;
