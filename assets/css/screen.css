@@ -842,7 +842,7 @@ body.tag-template #navbar {
 #post-content blockquote {
     margin: 28px 0;
     padding: 28px;
-    border-left: #f3cf00 3px solid
+    border-left: 3px solid #f3cf00;
 }
 
 #post-content blockquote > *:first-child {
@@ -892,11 +892,29 @@ body.tag-template #navbar {
     margin: 0;
 }
 
+/* @@iolo */
+#post-content table {
+    margin: 1em auto;
+    border: 3px solid #f3cf00;
+}
+
+#post-content th {
+    border: 1px solid #d4d4d4;
+    background: #e6e6e6;
+    text-align: center;
+}
+
+#post-content td {
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+}
+
 #post-content .footnotes p {
     margin: 0;
     text-align: left;
 }
 
+/* @@iolo */
 #post-footer {
     position: relative;
     height: 120px;
