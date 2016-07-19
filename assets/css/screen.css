@@ -421,6 +421,19 @@ for small screen(<720px):
     object-fit: cover;
 }
 
+/* @@iolo */
+#cover cite {
+    display: block;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    font-size: 60%;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 /* navbar */
 
 #navbar {
