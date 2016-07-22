@@ -14,7 +14,7 @@ cover:
 ---
 
 
-이번 챕터에서는 SSD의 주요 기능인 TRIM과 Over-provisioning(Over-provisioning)에 대해서 간단히 살펴보도록 하겠다.
+이번 챕터에서는 SSD의 주요 기능인 TRIM과 Over-provisioning에 대해서 간단히 살펴보도록 하겠다.
 또한 SSD의 내부 병렬 처리와 클러스터링 블록에 대해서도 같이 살펴보도록 하겠다.
 
 ![NAND flash package](/files/coding_for_ssd_part4_1.jpg)
@@ -52,7 +52,7 @@ Mac OS 10.6.8 그리고 HFS+ 파일 시스템은 TRIM 명령을 지원하며,
 
 ### 5.2. Over-provisioning
 
-Over-provisioning(Over-provisioning)은 단순히 논리적인 블록보다 물리적인 블록이 더 만도록 해주는 것인데,
+Over-provisioning은 단순히 논리적인 블록보다 물리적인 블록이 더 만도록 해주는 것인데,
 일정 비율의 물리 블록을 SSD 컨트롤러는 볼 수 있지만 운영 체제나 파일 시스템은 보지 못하도록 예약해두는 것이다.
 전문 SSD 제조사는 이미 7 ~ 25% 정도의 Over-provisioning 공간을 보유하고 있으며[^13],
 사용자는 단순히 가능한 물리 공간의 크기보다 작은 크기로 파티셔닝함으로써 더 많은 Over-provisioning 공간을 생성할 수 있다.
