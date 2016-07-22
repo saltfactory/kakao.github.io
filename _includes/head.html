@@ -16,15 +16,18 @@
 {% assign meta_image = site.image %}
 {% assign meta_type = 'website' %}
 {% endif %}
+{% unless meta_image contains '://' %}
+{% assign meta_image = meta_image | prepend: site.url %}
+{% endunless %}
 <meta name="title" content="{{ meta_title }}" />
 <meta name="author" content="{{ meta_author }}"/>
 <meta name="description" content="{{ meta_description }}"/>
-<meta name="og:site_name" content="{{ site.title }}"/>
-<meta name="og:type" content="{{ meta_type }}"/>
-<meta name="og:title" content="{{ meta_title }}"/>
-<meta name="og:description" content="{{ meta_description }}"/>
-<meta name="og:url" content="{{ meta_url }}"/>
-<meta name="og:image" content="{{ meta_image }}"/>
+<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="og:type" content="{{ meta_type }}"/>
+<meta property="og:title" content="{{ meta_title }}"/>
+<meta property="og:description" content="{{ meta_description }}"/>
+<meta property="og:url" content="{{ meta_url }}"/>
+<meta property="og:image" content="{{ meta_image }}"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="{{ meta_title }}"/>
 <meta name="twitter:description" content="{{ meta_description }}"/>
