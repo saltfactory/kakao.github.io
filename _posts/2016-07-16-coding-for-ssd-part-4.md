@@ -17,7 +17,7 @@ cover:
 이번 챕터에서는 SSD의 주요 기능인 TRIM과 Over-provisioning에 대해서 간단히 살펴보도록 하겠다.
 또한 SSD의 내부 병렬 처리와 클러스터링 블록에 대해서도 같이 살펴보도록 하겠다.
 
-![NAND flash package](/files/coding_for_ssd_part4_1.jpg)
+![](/files/coding_for_ssd_part4_1.jpg)
 
 ## 5. 고급 기능
 

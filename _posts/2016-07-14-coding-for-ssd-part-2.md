@@ -17,7 +17,7 @@ cover:
 이 챕터에서는 NAND 플래시 메모리의 기본적인 내용과 셀 타입 그리고 SSD의 기본적인 내부 아키텍처에 대해서 살펴보고,
 추가로 SSD의 벤치마킹 방법과 벤치마킹 결과를 해석하는 부분도 살펴보도록 하겠다.
 
-![Architecture of a solid-state drive](/files/coding_for_ssd_part2_1.jpg)
+![](/files/coding_for_ssd_part2_1.jpg)
 
 ## 1. SSD의 구조
 
