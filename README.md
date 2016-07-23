@@ -2,7 +2,7 @@ tech.kakao.com
 ==============
 
 > 주의: [GitHub Pages]와 [Jekyll]에 대해서 충분히 숙지할 것.
-> 주의: [Collaborating on projects using issues and pull requests](https://help.github.com/categories/collaborating-on-projects-using-issues-and-pull-requests/]을 정독.
+> 주의: [Collaborating on projects using issues and pull requests](https://help.github.com/categories/collaborating-on-projects-using-issues-and-pull-requests/)을 정독.
 
 
 ### 설치
