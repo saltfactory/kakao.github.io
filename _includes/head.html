@@ -16,30 +16,39 @@
 {% assign meta_image = site.image %}
 {% assign meta_type = 'website' %}
 {% endif %}
+{% unless meta_image contains '://' %}
+{% assign meta_image = meta_image | prepend: site.url %}
+{% endunless %}
 <meta name="title" content="{{ meta_title }}" />
 <meta name="author" content="{{ meta_author }}"/>
 <meta name="description" content="{{ meta_description }}"/>
-<meta name="og:site_name" content="{{ site.title }}"/>
-<meta name="og:type" content="{{ meta_type }}"/>
-<meta name="og:title" content="{{ meta_title }}"/>
-<meta name="og:description" content="{{ meta_description }}"/>
-<meta name="og:url" content="{{ meta_url }}"/>
-<meta name="og:image" content="{{ meta_image }}"/>
+{% if site.facebook.app_id %}
+<meta property="fb:app_id" content="{{ site.facebook.app_id }}"/>
+{% endif %}
+<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="og:type" content="{{ meta_type }}"/>
+<meta property="og:title" content="{{ meta_title }}"/>
+<meta property="og:description" content="{{ meta_description }}"/>
+<meta property="og:url" content="{{ meta_url }}"/>
+<meta property="og:image" content="{{ meta_image }}"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="{{ meta_title }}"/>
 <meta name="twitter:description" content="{{ meta_description }}"/>
-<meta name="twitter:image:src" content="{{ meta_image }}"/>
 <meta name="twitter:label1" content="Written by"/>
 <meta name="twitter:data1" content="{{ meta_author }}"/>
+<meta name="twitter:image:src" content="{{ meta_image }}"/>
 {% if page.tags %}
-{% for tag in page.tags %}
-<meta name="article:tag" content="{{ tag }}"/>
-{% endfor %}
 <meta name="twitter:label2" content="Filed under"/>
 <meta name="twitter:data2" content="{{ page.tags | join: ','}}"/>
+{% for tag in page.tags %}
+<meta property="article:tag" content="{{ tag }}"/>
+{% endfor %}
 {% endif %}
 {% if page.date %}
-<meta name="article:published_time" content="{{ page.date | date_to_xmlschema }}"/>
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}"/>
+{% endif %}
+{% if page.author %}
+<meta property="article:author" content="{{ site.url }}{{ site.baseurl }}/authors/{{ page.author }}"/>
 {% endif %}
 <link href="{{ site.url }}/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
 <link href="{{ site.asset_url }}/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>

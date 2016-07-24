@@ -43,8 +43,8 @@ kakao 기술 블로그는 올해 초 [Ghost] 블로깅 플랫폼을 사용해서
 공짜로 웹 서버를 구축할 수 있지만, 스태틱 컨텐츠만 서비스할 수 있어서 제한적인 용도(예: 뻔한 오픈소스 소개/문서 사이트)에 주로 사용됩니다.
 그러나, 여기에 [정적 사이트 생성기]가 결합되면 활용의 폭이 훨씬 넓어집니다.
 그 중에서도 [Jekyll]은 [GitHub Pages]가 기본으로 지원하는 정적 사이트 생성기로,
-소스(주로 [Markdown])를 깃헙에 올리면 [Jekyll]을 실행해서 정적 사이트를 생성하는 과정을 깃헙 서버가 자동으로 수행합니다.
-하고, 그것을 웹 페이지로 서비스합니다.
+소스(주로 [Markdown])를 깃헙에 올리면 [Jekyll]을 실행해서 정적 사이트를 생성하는 과정을 깃헙 서버가 자동으로 수행하고,
+그것을 웹 페이지로 서비스합니다.
 
 자세한 내용은 [GitHub Pages에서 Jekyll을 정적 사이트 생성기로 사용하기](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages)에게 맡기고,
 이 글에서는 kakao 기술 블로그를 만들면서 추가한 기능들만 소개하겠습니다.
@@ -140,7 +140,7 @@ image: /files/covers/opensource.jpg
 **태그별 포스트 목록 페이지**를 생성하는 과정은 다음과 같습니다:
 
 1. `_tags` 디렉토리 아래의 파일목록을 수집해서 템플릿 변수 `site.tags` 에 담아둔다.(`_config.yml`의 `collections` 설정에 `tags`가 있으므로)
-2. `_tags` 디렉토리 아래의 파일들(예: `_tags/opensource.md` 등)을 처리해서 html 을 생성한다.(`_config.yml`의 `collections` 설정에 `output: true` 이므로)
+2. `_tags` 디렉토리 아래의 파일들(예: `_tags/opensource.md` 등)을 처리해서 HTML 파일을 생성한다.(`_config.yml`의 `collections` 설정에 `output: true` 이므로)
   1. 각 태그 파일의 데이터를 `_layouts/tag.html` 레이아웃 템플릿을 결합해서(`_config.yml`의 `defaults` 설정에 `layout: tag` 이므로)
   2. `tags/opensource/index.html` 등의 파일에 저장한다.(`_config.yml`의 `collections` 설정에 `permalink: /tags/:path/` 이므로)
 
@@ -165,7 +165,7 @@ image: /files/covers/opensource.jpg
 하는 코드가 눈에 들어올 겁니다.
 (주의: 여기서 `page` 변수에는 태그 파일의 데이터가 담겨있습니다.)
 
-단순무식한 `O(포스트개수 x 태그개수` 풀스캔이지만,
+단순무식한 `O(포스트개수 x 태그개수)` 풀스캔이지만,
 이 과정은 정적 사이트 생성 과정에만 이루어지므로 실제 서비스에는 영향이 없습니다.
 
 [Jekyll의 Data Files 기능](https://jekyllrb.com/docs/datafiles/)을 이용하면
@@ -202,7 +202,7 @@ defaults:
 설명이 필요없겠죠? 태깅과 거의 같습니다. ;)
 
 2. `_layouts` 디렉토리에 **작성자별 포스트 목록**을 보여줄 템플릿 파일
-`author.html`[소스](https://raw.githubusercontent.com/kakao/kakao.github.io/master/_layouts/author.html)을 만듭니다:
+[`author.html`](https://raw.githubusercontent.com/kakao/kakao.github.io/master/_layouts/author.html)을 만듭니다:
 
 {% raw %}
 ```html
@@ -339,7 +339,7 @@ layout: null
 
 ## Epilogue
 
-기업의 기술 블로그에 이런 가벼운 내용이 올라가도 될까~~라는 잠시했었지만...
+기업의 기술 블로그에 이런 가벼운 내용이 올라가도 될까...라는 고민을 잠시했지만...
 [우아한형제들의 기술 블로그에 김범준 님이 쓰신 글](http://woowabros.github.io/woowabros/2016/06/30/woowabros_cto.html)을 보고 용기내어 올려봅니다.
 
 앞으로도 kakao 기술 블로그 많이 사랑해 주세요. 꾸벅~

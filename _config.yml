@@ -1,5 +1,5 @@
 title: kakao 기술 블로그
-email: oss@kakaocorp.com
+email: opensource@kakaocorp.com
 description: |
   Connect Everything 새로운 연결, 새로운 세상.
   연결의 혁신으로 세상은 더욱 가깝고 새로워진다고 카카오는 믿습니다.
@@ -49,7 +49,7 @@ exclude: [README.md, Gemfile, Gemfile.lock]
 keep_files: [assets, files]
 
 # iolo's custom
-author: oss@kakaocorp.com
+author: opensource@kakaocorp.com
 image: '/assets/images/default_blog_cover.jpg'
 asset_url: /assets
 #asset_url: //meta-kage.kakaocdn.net/dn/osa/blog/assets
@@ -57,8 +57,8 @@ asset_url: /assets
 google_analytics:
   ua: 'UA-72007721-1'
 facebook:
-  app_id: '1030557850293450'
-  username: daumkakaoglobal
+  app_id: '1204347326263800'
+  username: kakaocorp
 twitter:
   username: kakaodev
 google_plus:

@@ -1,9 +1,62 @@
 tech.kakao.com
 ==============
 
-> 주의: [http://github.com/kakao/kakao.github.io](http://github.com/kakao/kakao.github.io) 저장소(private)에 권한이 필요함.
-
 > 주의: [GitHub Pages]와 [Jekyll]에 대해서 충분히 숙지할 것.
+> 주의: [Collaborating on projects using issues and pull requests](https://help.github.com/categories/collaborating-on-projects-using-issues-and-pull-requests/)을 정독.
+
+
+### 설치
+
+<https://github.com/kakao/kakao.github.io> 에 push 권한이 있다면:
+
+1. git fetch or pull or clone
+2. [Jekyll] 설치
+
+```console
+$ git clone git@github.com:kakao/kakao.github.io.git
+$ cd kakao.github.io
+$ bundle install
+```
+
+<https://github.com/kakao/kakao.github.io> 에 push 권한이 없다면:
+
+1. <https://github.com/kakao/kakao.github.io> 에서 `Fork` 버튼 클릭하고,
+2. 포크 저장소 계정(maybe 개인 계정) 선택
+3. git fetch or pull or clone
+4. 포크 설정 [Configuring a remote for a fork](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
+5. 포크 동기화 [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
+6. [Jekyll] 설치
+
+```console
+$ git clone git@github.com:YOUR_GITHUB_ACCOUNT/kakao.github.io.git
+$ cd kakao.github.io
+$ git remote add upstream git@github.com:kakao/kakao.github.io.git
+$ git fetch upstream
+$ git checkout master
+$ git merge upstream/master
+$ bundle install
+```
+
+### 실행(로컬)
+
+```
+$ bundle exec jekyll serve
+$ open http://localhost:4000
+```
+
+### 배포(발행)
+
+<https://github.com/kakao/kakao.github.io> 에 push 권한이 있다면:
+
+```
+$ git commit -m '...'
+$ git push origin master
+````
+
+<https://github.com/kakao/kakao.github.io> 에 push 권한이 없다면:
+
+1. Fork 동기화 [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
+2. Pull Request 보내기 [Creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
 
 ### 새 글 작성
 
@@ -11,7 +64,7 @@ tech.kakao.com
 2. 포스트를 마크다운으로 작성
   - gfm 문법, kramdown 파서, rouge 문법강조기 사용
 
-### 글 발행
+### 글 쓰기
 
 1. `_posts` 디렉토리에 `yyyy-mm-dd-slug.md` 파일로 복사(or 이동).
  - slug: 해당 포스트의 고유 키로 url의 일부로 사용. 왠만하면 특수문자없이 영문자,숫자,-(하이픈),.(점)...만 사용.
@@ -26,7 +79,6 @@ tech.kakao.com
  - date: `YYYY-MM-DD HH:MM:SS` # 발행일(필수)
 3. 처음 글을 쓰는 필자이라면 **글쓴이 등록**(필수)
 4. 유력한(?) 태그가 새로 등장했다면 **태그 등록**(선택)
-3. commit & push
 
 ### 필자 등록
 
@@ -44,16 +96,16 @@ tech.kakao.com
 
 1. `_tags` 디렉토리에 `tag-name.md` 이름으로 필자 정보 파일 추가
  - 참고: 최종적으로 사용자 포스트 목록 페이지의 url은 http://tech.kakao.com/tags/tag-name/
-3. 파일 상단에 [front matter] 작성
+2. 파일 상단에 [front matter] 작성
  - layout: tag # 레이아웃(필수)
  - name: `tag-name` # post의 tags 배열의 항목과 매칭(필수). 왠만하면 특수문자없이 영소문자,숫자,-(하이픈),.(점)...만 사용.
  - title: ... # 좀 더 길고 구체적인 설명(필수)
  - image: http://... # 태그 이미지(선택)
 3. 내용은 필요없음
 
-### 기타
+---
 
-@iolo.fitzowen / OSA파트에 문의
+문의: <opensource@kakaocorp.com>
 
 May the **SOURCE** be with you...
 
