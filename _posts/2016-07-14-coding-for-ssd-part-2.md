@@ -323,74 +323,74 @@ Jeremiah Peschka[^46] 가 작성한 “IOPS are a scam”라는 문서도 많은
 [^1]: [Understanding Intrinsic Characteristics and System Implications of Flash Memory based Solid State Drives, Chen et al., 2009](http://www.cse.ohio-state.edu/hpcs/WWW/HTML/publications/papers/TR-09-2.pdf)  
 [^2]: [Parameter-Aware I/O Management for Solid State Disks (SSDs), Kim et al., 2012](http://csl.skku.edu/papers/CS-TR-2010-329.pdf)  
 [^3]: [Essential roles of exploiting internal parallelism of flash memory based solid state drives in high-speed data processing, Chen et al, 2011](http://bit.csc.lsu.edu/~fchen/paper/papers/hpca11.pdf)  
-[^4]: [Exploring and Exploiting the Multilevel Parallelism Inside SSDs for Improved Performance and Endurance, Hu et al., 2013](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6165265)  
-[^5]: [Design Tradeoffs for SSD Performance, Agrawal et al., 2008](http://research.microsoft.com/pubs/63596/usenix-08-ssd.pdf)  
-[^6]: [Design Patterns for Tunable and Efficient SSD-based Indexes, Anand et al., 2012](http://instartlogic.com/resources/research_papers/aanand-tunable_efficient_ssd_indexes.pdf)  
-[^7]: [BPLRU: A Buffer Management Scheme for Improving Random Writes in Flash Storage, Kim et al., 2008](https://www.usenix.org/legacy/events/fast08/tech/full_papers/kim/kim.pdf)  
-[^8]: [SFS: Random Write Considered Harmful in Solid State Drives, Min et al., 2012](https://www.usenix.org/legacy/event/fast12/tech/full_papers/Min.pdf)  
-[^9]: [A Survey of Flash Translation Layer, Chung et al., 2009](http://idke.ruc.edu.cn/people/dazhou/Papers/AsurveyFlash-JSA.pdf)  
-[^10]: [A Reconfigurable FTL (Flash Translation Layer) Architecture for NAND Flash-Based Applications, Park et al., 2008](http://idke.ruc.edu.cn/people/dazhou/Papers/a38-park.pdf)  
-[^11]: [Reliably Erasing Data From Flash-Based Solid State Drives, Wei et al., 2011](https://www.usenix.org/legacy/event/fast11/tech/full_papers/Wei.pdf)  
-[^12]: <http://en.wikipedia.org/wiki/Solid-state_drive>
-[^13]: <http://en.wikipedia.org/wiki/Write_amplification>
-[^14]: <http://en.wikipedia.org/wiki/Flash_memory>
-[^15]: <http://en.wikipedia.org/wiki/Serial_ATA>
-[^16]: <http://en.wikipedia.org/wiki/Trim_(computing)>
-[^17]: <http://en.wikipedia.org/wiki/IOPS>
-[^18]: <http://en.wikipedia.org/wiki/Hard_disk_drive>
-[^19]: <http://en.wikipedia.org/wiki/Hard_disk_drive_performance_characteristics>
-[^20]: <http://centon.com/flash-products/chiptype>
-[^21]: <http://www.thessdreview.com/our-reviews/samsung-64gb-mlc-ssd/>
-[^22]: <http://www.anandtech.com/show/7594/samsung-ssd-840-evo-msata-120gb-250gb-500gb-1tb-review>
-[^23]: <http://www.anandtech.com/show/6337/samsung-ssd-840-250gb-review/2>
-[^24]: <http://www.storagereview.com/ssd_vs_hdd>
-[^25]: <http://www.storagereview.com/wd_black_4tb_desktop_hard_drive_review_wd4003fzex>
-[^26]: <http://www.storagereview.com/samsung_ssd_840_pro_review>
-[^27]: <http://www.storagereview.com/micron_p420m_enterprise_pcie_ssd_review>
-[^28]: <http://www.storagereview.com/intel_x25-m_ssd_review>
-[^29]: <http://www.storagereview.com/seagate_momentus_xt_750gb_review>
-[^30]: <http://www.storagereview.com/corsair_vengeance_ddr3_ram_disk_review>
-[^31]: <http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/>
-[^32]: <http://www.anandtech.com/show/2738>
-[^33]: <http://www.anandtech.com/show/2829>
-[^34]: <http://www.anandtech.com/show/6489>
-[^35]: <http://lwn.net/Articles/353411/>
-[^36]: <http://us.hardware.info/reviews/4178/10/hardwareinfo-tests-lifespan-of-samsung-ssd-840-250gb-tlc-ssd-updated-with-final-conclusion-final-update-20-6-2013>
-[^37]: <http://www.anandtech.com/show/6489/playing-with-op>
-[^38]: <http://www.ssdperformanceblog.com/2011/06/intel-320-ssd-random-write-performance/>
-[^39]: <http://en.wikipedia.org/wiki/Native_Command_Queuing>
-[^40]: <http://superuser.com/questions/228657/which-linux-filesystem-works-best-with-ssd/>
-[^41]: <http://blog.superuser.com/2011/05/10/maximizing-the-lifetime-of-your-ssd/>
-[^42]: <http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment>
-[^43]: <http://rethinkdb.com/blog/page-alignment-on-ssds/>
-[^44]: <http://rethinkdb.com/blog/more-on-alignment-ext2-and-partitioning-on-ssds/>
-[^45]: <http://rickardnobel.se/storage-performance-iops-latency-throughput/>
-[^46]: <http://www.brentozar.com/archive/2013/09/iops-are-a-scam/>
-[^47]: <http://www.acunu.com/2/post/2011/08/why-theory-fails-for-ssds.html>
-[^48]: <http://security.stackexchange.com/questions/12503/can-wiped-ssd-data-be-recovered>
-[^49]: <http://security.stackexchange.com/questions/5662/is-it-enough-to-only-wipe-a-flash-drive-once>
-[^50]: <http://searchsolidstatestorage.techtarget.com/feature/The-truth-about-SSD-performance-benchmarks>
-[^51]: <http://www.theregister.co.uk/2012/12/03/macronix_thermal_annealing_extends_life_of_flash_memory/>
-[^52]: <http://www.eecs.berkeley.edu/~rcs/research/interactive_latency.html>
-[^53]: <http://blog.nuclex-games.com/2009/12/aligning-an-ssd-on-linux/>
-[^54]: <http://www.linux-mag.com/id/8397/>
-[^55]: <http://tytso.livejournal.com/2009/02/20/>
-[^56]: <https://wiki.debian.org/SSDOptimization>
-[^57]: <http://wiki.gentoo.org/wiki/SSD>
-[^58]: <https://wiki.archlinux.org/index.php/Solid_State_Drives>
-[^59]: <https://www.kernel.org/doc/Documentation/block/cfq-iosched.txt>
-[^60]: <http://www.danielscottlawrence.com/blog/should_i_change_my_disk_scheduler_to_use_NOOP.html>
-[^61]: <http://www.phoronix.com/scan.php?page=article&item=linux_iosched_2012>
-[^62]: <http://www.velobit.com/storage-performance-blog/bid/126135/Effects-Of-Linux-IO-Scheduler-On-SSD-Performance> 
-[^63]: <http://www.axpad.com/blog/301>
-[^64]: <http://en.wikipedia.org/wiki/List_of_solid-state_drive_manufacturers>
-[^65]: <http://en.wikipedia.org/wiki/List_of_flash_memory_controller_manufacturers>
-[^66]: <http://blog.zorinaq.com/?e=29>
-[^67]: <http://www.gamersnexus.net/guides/956-how-ssds-are-made>
-[^68]: <http://www.gamersnexus.net/guides/1148-how-ram-and-ssds-are-made-smt-lines> 
-[^69]: <http://www.tweaktown.com/articles/4655/kingston_factory_tour_making_of_an_ssd_from_start_to_finish/index.html> 
-[^70]: <http://www.youtube.com/watch?v=DvA9koAMXR8>
-[^71]: <http://www.youtube.com/watch?v=3s7KG6QwUeQ>
+[^4]: [Exploring and Exploiting the Multilevel Parallelism Inside SSDs for Improved Performance and Endurance, Hu et al., 2013](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6165265)    
+[^5]: [Design Tradeoffs for SSD Performance, Agrawal et al., 2008](http://research.microsoft.com/pubs/63596/usenix-08-ssd.pdf)    
+[^6]: [Design Patterns for Tunable and Efficient SSD-based Indexes, Anand et al., 2012](http://instartlogic.com/resources/research_papers/aanand-tunable_efficient_ssd_indexes.pdf)    
+[^7]: [BPLRU: A Buffer Management Scheme for Improving Random Writes in Flash Storage, Kim et al., 2008](https://www.usenix.org/legacy/events/fast08/tech/full_papers/kim/kim.pdf)    
+[^8]: [SFS: Random Write Considered Harmful in Solid State Drives, Min et al., 2012](https://www.usenix.org/legacy/event/fast12/tech/full_papers/Min.pdf)    
+[^9]: [A Survey of Flash Translation Layer, Chung et al., 2009](http://idke.ruc.edu.cn/people/dazhou/Papers/AsurveyFlash-JSA.pdf)    
+[^10]: [A Reconfigurable FTL (Flash Translation Layer) Architecture for NAND Flash-Based Applications, Park et al., 2008](http://idke.ruc.edu.cn/people/dazhou/Papers/a38-park.pdf)    
+[^11]: [Reliably Erasing Data From Flash-Based Solid State Drives, Wei et al., 2011](https://www.usenix.org/legacy/event/fast11/tech/full_papers/Wei.pdf)    
+[^12]: <http://en.wikipedia.org/wiki/Solid-state_drive>  
+[^13]: <http://en.wikipedia.org/wiki/Write_amplification>  
+[^14]: <http://en.wikipedia.org/wiki/Flash_memory>  
+[^15]: <http://en.wikipedia.org/wiki/Serial_ATA>  
+[^16]: <http://en.wikipedia.org/wiki/Trim_(computing)>  
+[^17]: <http://en.wikipedia.org/wiki/IOPS>  
+[^18]: <http://en.wikipedia.org/wiki/Hard_disk_drive>  
+[^19]: <http://en.wikipedia.org/wiki/Hard_disk_drive_performance_characteristics>  
+[^20]: <http://centon.com/flash-products/chiptype>  
+[^21]: <http://www.thessdreview.com/our-reviews/samsung-64gb-mlc-ssd/>  
+[^22]: <http://www.anandtech.com/show/7594/samsung-ssd-840-evo-msata-120gb-250gb-500gb-1tb-review>  
+[^23]: <http://www.anandtech.com/show/6337/samsung-ssd-840-250gb-review/2>  
+[^24]: <http://www.storagereview.com/ssd_vs_hdd>  
+[^25]: <http://www.storagereview.com/wd_black_4tb_desktop_hard_drive_review_wd4003fzex>  
+[^26]: <http://www.storagereview.com/samsung_ssd_840_pro_review>  
+[^27]: <http://www.storagereview.com/micron_p420m_enterprise_pcie_ssd_review>  
+[^28]: <http://www.storagereview.com/intel_x25-m_ssd_review>  
+[^29]: <http://www.storagereview.com/seagate_momentus_xt_750gb_review>  
+[^30]: <http://www.storagereview.com/corsair_vengeance_ddr3_ram_disk_review>  
+[^31]: <http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/>  
+[^32]: <http://www.anandtech.com/show/2738>  
+[^33]: <http://www.anandtech.com/show/2829>  
+[^34]: <http://www.anandtech.com/show/6489>  
+[^35]: <http://lwn.net/Articles/353411/>  
+[^36]: <http://us.hardware.info/reviews/4178/10/hardwareinfo-tests-lifespan-of-samsung-ssd-840-250gb-tlc-ssd-updated-with-final-conclusion-final-update-20-6-2013>  
+[^37]: <http://www.anandtech.com/show/6489/playing-with-op>  
+[^38]: <http://www.ssdperformanceblog.com/2011/06/intel-320-ssd-random-write-performance/>  
+[^39]: <http://en.wikipedia.org/wiki/Native_Command_Queuing>  
+[^40]: <http://superuser.com/questions/228657/which-linux-filesystem-works-best-with-ssd/>  
+[^41]: <http://blog.superuser.com/2011/05/10/maximizing-the-lifetime-of-your-ssd/>  
+[^42]: <http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment>  
+[^43]: <http://rethinkdb.com/blog/page-alignment-on-ssds/>  
+[^44]: <http://rethinkdb.com/blog/more-on-alignment-ext2-and-partitioning-on-ssds/>  
+[^45]: <http://rickardnobel.se/storage-performance-iops-latency-throughput/>  
+[^46]: <http://www.brentozar.com/archive/2013/09/iops-are-a-scam/>  
+[^47]: <http://www.acunu.com/2/post/2011/08/why-theory-fails-for-ssds.html>  
+[^48]: <http://security.stackexchange.com/questions/12503/can-wiped-ssd-data-be-recovered>  
+[^49]: <http://security.stackexchange.com/questions/5662/is-it-enough-to-only-wipe-a-flash-drive-once>  
+[^50]: <http://searchsolidstatestorage.techtarget.com/feature/The-truth-about-SSD-performance-benchmarks>  
+[^51]: <http://www.theregister.co.uk/2012/12/03/macronix_thermal_annealing_extends_life_of_flash_memory/>  
+[^52]: <http://www.eecs.berkeley.edu/~rcs/research/interactive_latency.html>  
+[^53]: <http://blog.nuclex-games.com/2009/12/aligning-an-ssd-on-linux/>  
+[^54]: <http://www.linux-mag.com/id/8397/>  
+[^55]: <http://tytso.livejournal.com/2009/02/20/>  
+[^56]: <https://wiki.debian.org/SSDOptimization>  
+[^57]: <http://wiki.gentoo.org/wiki/SSD>  
+[^58]: <https://wiki.archlinux.org/index.php/Solid_State_Drives>  
+[^59]: <https://www.kernel.org/doc/Documentation/block/cfq-iosched.txt>  
+[^60]: <http://www.danielscottlawrence.com/blog/should_i_change_my_disk_scheduler_to_use_NOOP.html>  
+[^61]: <http://www.phoronix.com/scan.php?page=article&item=linux_iosched_2012>  
+[^62]: <http://www.velobit.com/storage-performance-blog/bid/126135/Effects-Of-Linux-IO-Scheduler-On-SSD-Performance>   
+[^63]: <http://www.axpad.com/blog/301>  
+[^64]: <http://en.wikipedia.org/wiki/List_of_solid-state_drive_manufacturers>  
+[^65]: <http://en.wikipedia.org/wiki/List_of_flash_memory_controller_manufacturers>  
+[^66]: <http://blog.zorinaq.com/?e=29>  
+[^67]: <http://www.gamersnexus.net/guides/956-how-ssds-are-made>  
+[^68]: <http://www.gamersnexus.net/guides/1148-how-ram-and-ssds-are-made-smt-lines>   
+[^69]: <http://www.tweaktown.com/articles/4655/kingston_factory_tour_making_of_an_ssd_from_start_to_finish/index.html>   
+[^70]: <http://www.youtube.com/watch?v=DvA9koAMXR8>  
+[^71]: <http://www.youtube.com/watch?v=3s7KG6QwUeQ>  
 [^72]: [Understanding the Robustness of SSDs under Power Fault, Zheng et al., 2013](https://www.usenix.org/conference/fast13/technical-sessions/presentation/zheng) — [discussion on HN](https://news.ycombinator.com/item?id=7047118)  
-[^73]: <http://lkcl.net/reports/ssd_analysis.html> - [discussion on HN](https://news.ycombinator.com/item?id=6973179)
+[^73]: <http://lkcl.net/reports/ssd_analysis.html> - [discussion on HN](https://news.ycombinator.com/item?id=6973179)  
 
