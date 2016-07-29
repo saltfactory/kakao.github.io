@@ -12,7 +12,7 @@
         <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
     </form>
     <ul id="menu" class="nav">
-        <li class="{% if page.url != '/opensource/' and page.url != '/openapi/' %} active {% endif %}"><a href="{{ base_path }}/">블로그</a></li>
+        <li class="{% if page.url != '/opensource/' and page.url != '/openapi/' and page.url != '/events/' %} active {% endif %}"><a href="{{ base_path }}/">블로그</a></li>
         <li class="{% if page.url == '/opensource/' %} active {% endif %}"><a href="{{ base_path }}/opensource/">오픈소스</a></li>
         <li class="{% if page.url == '/openapi/' %} active {% endif %}"><a href="{{ base_path }}/openapi/">오픈API</a></li>
         <li class="{% if page.url == '/events/' %} active {% endif %}"><a href="{{ base_path }}/events/">기술행사</a></li>
